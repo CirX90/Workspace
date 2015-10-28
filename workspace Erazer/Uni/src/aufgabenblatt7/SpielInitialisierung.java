@@ -54,7 +54,7 @@ public class SpielInitialisierung {
 	public String getAssetDateiname(AbstraktesAsset.AssetTyp assetTyp) {
 		switch (assetTyp) {
 		case HELD:
-			return "sandra.png";
+			return "held.png";
 		case BOESEWICHT:
 			return "boesewicht.png";
 		case BAUM:
