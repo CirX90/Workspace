@@ -1,0 +1,123 @@
+package aufgabenblatt4_1;
+
+import java.util.Scanner;
+
+public class Tamagotchi {
+
+	// Deklarieren, Startwert = 0,
+	private int hunger;
+	private int langeweile;
+	private int muedigkeit;
+	private int punkte;
+	
+	Scanner scanner = new Scanner(System.in);
+
+	/** Konstruktor
+	public Tamagotchi(int hunger, int langeweile, int muedigkeit, int punkte) {
+
+		this.hunger = hunger;
+		this.langeweile = langeweile;
+		this.muedigkeit = muedigkeit;
+		this.punkte = punkte;
+
+	} **/
+
+	// Werte erhöhen +1
+	public void tick() {
+
+		this.hunger++;
+		this.langeweile++;
+		this.muedigkeit++;
+
+	}
+
+	// Methode schlaf setzt Müdigkeit u. Langeweile auf 0
+	// hunger +1
+	public void schlaf() {
+
+		this.muedigkeit = 0;
+		this.hunger++;
+		this.langeweile = 0;
+	}
+
+	public void spiel() {
+
+		this.langeweile = 0;
+		this.hunger++;
+		this.muedigkeit++;
+	}
+
+	public void iss() {
+
+		this.hunger = 0;
+		this.langeweile++;
+
+	}
+
+	public void nichts() {
+		
+	}
+
+	public void ende() {
+		
+	}
+	
+	public void verarbeiteKommando(String kommando) {
+		
+		
+		if (kommando.equals("iss")) {
+		  iss();
+		}
+		else if (kommando.equals("schlaf")){
+		  schlaf();
+		}
+		else if (kommando.equals("spiel")){
+			  spiel();
+			}
+		else if (kommando.equals("nichts")){
+			  nichts();
+			}
+		else if (kommando.equals("ende")){
+			  ende();
+			}
+		else {
+			System.out.println("Ich habe deinen Befehl leider"
+					+ "nicht verstanden. \n Bitte wiederhole den Befehl! \n"
+					+ "Deine Möglichkeiten sind iss, schlaf, spiel, nichts"
+					+ " oder ende.");
+		}
+	}
+
+	private String getNextKommando() {
+		
+		System.out.println("Bitte gib Befehl ein!");
+		String kommando = scanner.nextLine();
+		return kommando;
+		
+	}
+
+	public void printPunktestand(int punkte) {
+
+		System.out.println(punkte);
+	}
+	
+	// Getter für Punkte
+	public int getPunktestand() {
+		punkte = hunger >= 4 ? punkte - 2 : punkte + 1;
+		punkte = muedigkeit >= 4 ? punkte - 2 : punkte + 1;
+		punkte = langeweile >= 4 ? punkte - 2 : punkte + 1;
+		return punkte;
+	}
+	
+	// Main-Methode    !! Loop von -Punkten beenden lassen
+	public static void main(String[] args, int punkte) {
+	
+	Tamagotchi tama = new Tamagotchi();
+	
+	while (punkte >= 0) {
+		tama.tick();
+	}
+	
+  }
+	
+}

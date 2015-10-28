@@ -1,0 +1,25 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class Beginn {
+
+	public static void main(String[] args) {
+
+		int zaehler = 0, ergebnis = 0;
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ganze Zahl eingeben.");
+		int wert = scanner.nextInt();
+		scanner.close();
+
+		if (zaehler <= wert) {
+			ergebnis += zaehler;
+			System.out.println(ergebnis);
+			zaehler++;
+		}
+
+		System.out.println("Summe aller Zahlen von 0 bis " + wert
+				+ " ist gleich " + ergebnis);
+	}
+}

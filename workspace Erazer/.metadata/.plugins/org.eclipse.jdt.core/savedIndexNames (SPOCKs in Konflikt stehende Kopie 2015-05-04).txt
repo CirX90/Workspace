@@ -1,0 +1,6 @@
+INDEX VERSION 1.127+C:\Users\abx711\Dropbox\workspace Erazer\.metadata\.plugins\org.eclipse.jdt.core
+2928680709.index
+1912144857.index
+211382723.index
+506094942.index
+3176882768.index
