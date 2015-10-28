@@ -1,0 +1,125 @@
+/**
+ * Praktikum TI-PM Gruppe 2, SS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Milan Hering 	 (milan.hering@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 5, Aufgabe 4
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt5;
+
+import java.util.Scanner;
+
+public class StringVerarbeitung {
+
+	/**
+	 * Deklaration der Variablen.
+	 */
+
+	private Verschluesselung caesar = new Verschluesselung();
+	private VokaleZaehlen vokale = new VokaleZaehlen();
+	private Palindrom palindrom = new Palindrom();
+	private Scanner scanner = new Scanner(System.in);
+	private String eingabe;
+
+	/**
+	 * Getter und Setter Methode um die Eingabe speichern und wiedergeben zu
+	 * können.
+	 * 
+	 * @return
+	 */
+
+	public String getEingabe() {
+		return eingabe;
+	}
+
+	public void setEingabe(String eingabe) {
+		this.eingabe = eingabe;
+	}
+
+	/**
+	 * Aufnahme einer Eingabe per Scanner aus der Konsole und Speicherung
+	 * dieser.
+	 */
+
+	public void eingabe() {
+
+		System.out.println("Zum ver- und entschlüsseln sind"
+				+ " nur Großbuchstaben zugelassen.\nBei der Palindrom"
+				+ "auswertung bitte nur ganze Wörter angeben. "
+				+ "\nBeim Vokalezählen sind auch "
+				+ "ganze Sätze erlaubt.\nEingabe: ");
+
+		String eingabe = scanner.nextLine();
+
+		setEingabe(eingabe);
+
+	}
+
+	/**
+	 * Mit einer Switch-Case Bedingung wird das eingegebene Kommando mit den
+	 * einzelnen Strings für die Methoden vergleichen. Bei Erfolg wird die
+	 * Methode aufgerufen, bei Nichterfolg wird nachgefragt und Eingabe neu
+	 * angeboten.
+	 */
+
+	public void eingabeVerarbeitung() {
+
+		String eingabe = getEingabe();
+
+		System.out.println("Bitte gib an was mit der Eingabe geschehen soll: "
+				+ "\"verschlüsseln\", \"entschlüsseln\", \"Längstes Palindrom"
+				+ " finden\" oder \"Vokale zählen\".");
+		String kommando = scanner.nextLine();
+
+		// Schleife um Neueingabe anbieten zu können. Trotzdem Abbruch nach
+		// einem vollen Durchlauf.
+		for (int zaehler = 0; zaehler < 1; zaehler++) {
+
+			switch (kommando) {
+			case "verschlüsseln":
+				caesar.setEingabe(eingabe);
+				caesar.verarbeiteEingabe();
+				caesar.verschluesseln();
+				break;
+			case "entschlüsseln":
+				caesar.setEingabe(eingabe);
+				caesar.verarbeiteEingabe();
+				caesar.entschluesseln(eingabe);
+				break;
+			case "Längstes Palindrom finden":
+				palindrom.setEingabe(eingabe);
+				palindrom.filterStrings();
+				palindrom.check();
+				palindrom.verarbeite();
+				palindrom.ausgabe();
+				break;
+			case "Vokale zählen":
+				vokale.setEingabe(eingabe);
+				vokale.filterGross();
+				vokale.filterKlein();
+				vokale.ausgabe();
+				break;
+			default:
+				System.out.println("Eingabe nicht richtig."
+						+ " Bitte Befehl neu eingeben.");
+				kommando = scanner.nextLine();
+
+				continue;
+
+			}
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		StringVerarbeitung string = new StringVerarbeitung();
+
+		string.eingabe();
+		string.eingabeVerarbeitung();
+
+	}
+
+}

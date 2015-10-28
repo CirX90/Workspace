@@ -1,0 +1,63 @@
+package aufgabenblatt4_1;
+
+public class Tamagotchi {
+	
+	// Deklarieren, Startwert = 0,
+	private int hunger = 0;
+	private int langeweile = 0;
+	private int muedigkeit = 0;
+	
+	// Konstruktor
+	public Tamagotchi(int hunger, int langeweile, int muedigkeit) {
+		
+		this.hunger = hunger;
+		this.langeweile = langeweile;
+		this.muedigkeit = muedigkeit;
+		
+	}
+	
+	// Werte erhöhen + Meldung wenn Werte > 3
+	public void tick() {
+
+		hunger++;
+		langeweile++;
+		muedigkeit++;
+		
+		if (hunger > 3) {
+			System.out.println("Brad ist hungrig!");
+		}
+		
+		if (langeweile > 3) {
+			System.out.println("Brad ist langweilig!");
+		}
+		
+		if (muedigkeit > 3) {
+			System.out.println("Brad ist müde!");
+		}
+	}
+
+	public void schlaf() {
+		
+	}
+	
+	public void spiel() {
+		
+	}
+	
+	public void iss() {
+		
+	}
+	
+	// Punktestand berechnen und zurückliefern
+	public int getPunktestand() {
+		return punktestand;
+	}
+	
+	//Main-Methode
+public static void main(String[] args) {
+	
+	
+	
+}
+
+}

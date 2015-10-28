@@ -1,0 +1,10 @@
+package aufgabenblatt4_2;
+
+public class Zug {
+	
+	public final Lokomotive lokomotive;
+	
+	public Zug(Lokomotive lok) {
+		this.lokomotive = lok;
+	}
+}

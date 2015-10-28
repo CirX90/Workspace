@@ -1,0 +1,25 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class Sandbox {
+		
+	public static void main(String [] args) {
+		
+		int zaehler = 0, ergebnis = 0;
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ganze Zahl eingeben.");
+		int eingabe = scanner.nextInt();
+		scanner.close();
+		
+		while(zaehler <= eingabe) {
+			ergebnis += zaehler;
+		System.out.println(ergebnis);
+			zaehler++;
+			}
+		
+		System.out.format("Die Summe von 1 bis " + eingabe +  " ist gleich " + ergebnis + ".");
+		
+		}
+	}

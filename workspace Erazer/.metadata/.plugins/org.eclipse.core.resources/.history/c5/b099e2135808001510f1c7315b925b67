@@ -1,0 +1,476 @@
+/**
+ * Praktikum TI-PM Gruppe 2, SS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Milan Hering 	 (milan.hering@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 5, Aufgabe 3
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt5;
+
+import java.util.Scanner;
+
+/**
+ * Dieses Programm dient dazu aus einem Wort ein Palindrom, also ein Wort, das
+ * man von vorne und hinten gleich lesen kann, herauszufiltern.
+ * 
+ * @author abx711
+ */
+
+public class Palindrom {
+
+	/**
+	 * Die Variable teilStringArrayLinks dient dazu um Arrays zu speichern für
+	 * die Methode filterStringLinks.
+	 */
+
+	private String[] teilStringArrayLinks;
+
+	/**
+	 * Die Variable teilStringArrayRechts dient dazu um Arrays zu speichern für
+	 * die Methode filterStringRechts.
+	 */
+
+	private String[] teilStringArrayRechts;
+
+	/**
+	 * Die Variable teilStringArrayMitte dient dazu um Arrays zu speichern für
+	 * die Methode filterStringMitte.
+	 */
+
+	private String[] teilStringArrayMitte;
+	
+	/**
+	 * Die Variable teilStringArray dient dazu um Arrays zu speichern für
+	 * die Methode filterString.
+	 */
+	
+	private String[] teilStringArray;
+	private String eingabe;
+	private String ausgabe;
+
+	/*
+	 * ******* GETTER/SETTER ********
+	 */
+
+	public String[] getTeilStringArrayLinks() {
+		return teilStringArrayLinks;
+	}
+
+	public void setTeilStringArrayLinks(String[] teilStringArray_li) {
+		this.teilStringArrayLinks = teilStringArray_li;
+	}
+
+	public String[] getTeilStringArrayRechts() {
+		return teilStringArrayRechts;
+	}
+
+	public void setTeilStringArrayRechts(String[] teilStringArray_re) {
+		this.teilStringArrayRechts = teilStringArray_re;
+	}
+
+	public String[] getTeilStringArrayMitte() {
+		return teilStringArrayMitte;
+	}
+
+	public void setTeilStringArrayMitte(String[] teilStringArray_mi) {
+		this.teilStringArrayMitte = teilStringArray_mi;
+	}
+
+	public String[] getTeilStringArray() {
+		return teilStringArray;
+	}
+
+	public void setTeilStringArray(String[] teilStringArray) {
+		this.teilStringArray = teilStringArray;
+	}
+
+	public String getEingabe() {
+		return eingabe;
+	}
+
+	/**
+	 * Zeichen der Eingabe werden in Kleinbuchstaben umgewandelt, damit sie
+	 * besser zu vergleichen sind.
+	 * 
+	 * @param eingabe
+	 */
+
+	public void setEingabe(String eingabe) {
+
+		if (eingabe != null) {
+			eingabe = eingabe.toLowerCase();
+		}
+		this.eingabe = eingabe;
+	}
+
+	public String getAusgabe() {
+		return ausgabe;
+	}
+
+	public void setAusgabe(String ausgabe) {
+		this.ausgabe = ausgabe;
+	}
+
+	/**
+	 * Aufnahme einer Eingabe per Scanner aus der Konsole und Speicherung
+	 * dieser.
+	 */
+
+	public void eingabe() {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Wort für Palindromprüfung eingeben.");
+		String eingabe = scanner.nextLine();
+		scanner.close();
+		setEingabe(eingabe);
+
+	}
+
+	/**
+	 * Hilfsmethode um zu Testen ob ganze Eingaben ein Palindrom ist. Durch eine
+	 * Schleife, die die Abbruchbedingung hat, dass vorne genau so groß oder
+	 * größer als die laenge ist. Die Länge wird durch die Länge der eingabe
+	 * bestimmt. Da vorne jede Schleifenrunde um einen vergrößert wird, hat man
+	 * eine passende Abbruchbedingung für jede Eingabe. Getestet wird, indem die
+	 * einzelnen Zeichen des Strings durch Bedingungen ausgelesen und
+	 * miteinander verglichen werden. Falls das komplette Wort ein Palindrom
+	 * ist, wird true ausgegeben, falls nicht, false.
+	 * 
+	 * @param eingabe
+	 * @return true
+	 */
+
+	public boolean isPalindrom(String eingabe) {
+
+		int vorne = 0;
+		int laenge = eingabe.length();
+		int abzug = 1;
+		int hinten = eingabe.length();
+
+		while (vorne < laenge) {
+
+			if (eingabe.charAt(vorne) == eingabe.charAt(hinten - abzug)) {
+
+				vorne++;
+				abzug++;
+
+			}
+
+			else if (eingabe.charAt(vorne) != eingabe.charAt(hinten - abzug)) {
+
+				vorne++;
+				abzug++;
+
+				return false;
+
+			}
+
+		}
+
+		return true;
+
+	}
+
+	/**
+	 * Methode um Unterstrings zu erstellen und jeden Unterstring darauf testen
+	 * zu lassen ob dieser ein Palindrom ist. Die Unterstrings werden in Arrays
+	 * gespeichert um sie auch einzelnd wieder abrufen zu können. In der ersten
+	 * Methode dieser Variante wird der String von außen nach innen in
+	 * Unterstrings aufgeteilt. lagerregal -> agerrega -> gerreg ->...
+	 */
+
+	public void filterStringsMitte() {
+
+		String eingabe = getEingabe();
+
+		if (eingabe != null) {
+
+			int vorne = 0;
+			int laenge = eingabe.length();
+			int hinten = eingabe.length();
+			int arrayIndex = 0;
+			String teilString;
+			String[] teilStringArrayMitte = new String[eingabe.length() - 1];
+
+			// MITTE
+			while (laenge >= 3) {
+
+				teilString = eingabe.substring(vorne, hinten);
+				laenge -= 2;
+				hinten--;
+				vorne++;
+
+				// Teilstring komplett Palindrom?
+				if (isPalindrom(teilString) == true) {
+
+					teilStringArrayMitte[arrayIndex] = teilString;
+					arrayIndex++;
+
+				}
+
+			}
+
+			setTeilStringArrayMitte(teilStringArrayMitte);
+		}
+
+	}
+
+	/**
+	 * In der zweiten Methode dieser Variante wird der String von rechts weg in
+	 * Unterstrings aufgeteilt. So kann man Testen ob Wörter wo das Palindrom
+	 * drinnen steckt wie bei Lagerregalseite, das Palindrom trotzdem gefunden
+	 * wird.
+	 */
+
+	// RECHTS
+
+	public void filterStringsRechts() {
+
+		String eingabe = getEingabe();
+
+		if (eingabe != null) {
+
+			int vorne_re = 0;
+			int laenge_re = eingabe.length();
+			int hinten_re = eingabe.length();
+			int arrayIndex_re = 0;
+			String teilString;
+			String[] teilStringArray_re = new String[eingabe.length() - 1];
+
+			while (laenge_re >= 3) {
+
+				teilString = eingabe.substring(vorne_re, hinten_re);
+				laenge_re--;
+				hinten_re--;
+
+				// Teilstring komplett Palindrom?
+				if (isPalindrom(teilString) == true) {
+
+					teilStringArray_re[arrayIndex_re] = teilString;
+					arrayIndex_re++;
+
+				}
+
+			}
+
+			setTeilStringArrayRechts(teilStringArray_re);
+
+		}
+
+	}
+
+	/**
+	 * In der dritten Methode dieser Variante wird der String von links weg in
+	 * Unterstrings aufgeteilt. So kann man Testen ob Wörter wo das Palindrom
+	 * drinnen steckt wie bei Holzlagerregal, das Palindrom trotzdem gefunden
+	 * wird.
+	 */
+
+	// LINKS
+
+	public void filterStringsLinks() {
+
+		String eingabe = getEingabe();
+
+		if (eingabe != null) {
+
+			int vorne_li = 0;
+			int laenge_li = eingabe.length();
+			int hinten_li = eingabe.length();
+			int arrayIndex_li = 0;
+			String teilString;
+			String[] teilStringArray_li = new String[eingabe.length() - 1];
+
+			while (laenge_li >= 3) {
+
+				teilString = eingabe.substring(vorne_li, hinten_li);
+				laenge_li--;
+				vorne_li++;
+
+				// Teilstring komplett Palindrom?
+				if (isPalindrom(teilString) == true) {
+
+					teilStringArray_li[arrayIndex_li] = teilString;
+					arrayIndex_li++;
+
+				}
+
+			}
+
+			setTeilStringArrayLinks(teilStringArray_li);
+
+		}
+
+	}
+
+	/**
+	 * Methode um die Untermethoden aufzurufen, um die Main zu entschlacken.
+	 */
+
+	public void filterStrings() {
+
+		filterStringsMitte();
+		filterStringsRechts();
+		filterStringsLinks();
+
+	}
+
+	/**
+	 * Methode um checken zu können ob überhaupt ein Palindrom in der Eingabe
+	 * enthalten ist. Wenn nicht, wird dieses dem Benutzer mitgeteilt und das
+	 * Programm komplett beendet.
+	 */
+
+	public void check() {
+		
+		if(getTeilStringArrayLinks() == null || getTeilStringArrayRechts() == null || getTeilStringArrayRechts() == null) {
+			
+			System.out.println("Eingabe ungültig!");
+			System.exit(0);
+			
+		}
+
+		String[] links = getTeilStringArrayLinks();
+		String[] mitte = getTeilStringArrayMitte();
+		String[] rechts = getTeilStringArrayRechts();
+		
+		
+
+		int gesamtlaenge = links.length + mitte.length + rechts.length;
+
+		// Gesamtlänge der Arrays als Abbruchbedingung.
+		for (int stelle = 0; stelle <= gesamtlaenge; stelle++) {
+
+			String string1 = links[stelle];
+			String string2 = mitte[stelle];
+			String string3 = rechts[stelle];
+
+			if (string1 == null) {
+				if (string2 == null) {
+					if (string3 == null) {
+
+					} else {
+						break;
+					}
+				} else {
+					break;
+				}
+
+			} else {
+				break;
+			}
+
+			System.out.println("Kein Palindrom gefunden!");
+			System.exit(0);
+		}
+
+	}
+
+	/**
+	 * Alle Unterstrings werden zusammengebracht. Da nur eine passendee
+	 * Konstellation die Bedingung der Filterung erfüllen, also lagerregal die
+	 * mittlere, holzlagerregal die linke und lagerregalseite die rechte kann
+	 * auch nur Array mit Inhalt gefüllt sein. Es wird die Arraysammlung
+	 * herausgesucht, in welcher der erste Inhalt gefunden wird.
+	 */
+
+	public void verarbeite() {
+
+		String[] links = getTeilStringArrayLinks();
+		String[] mitte = getTeilStringArrayMitte();
+		String[] rechts = getTeilStringArrayRechts();
+
+		int gesamtlaenge = links.length + mitte.length + rechts.length;
+
+		int stelle = 0;
+
+		// Gesamtlänge der Arrays als Abbruchbedingung.
+		while (stelle <= gesamtlaenge) {
+
+			if (links[stelle] == null) {
+				if (mitte[stelle] == null) {
+					if (rechts[stelle] == null) {
+
+					} else {
+						String teilStringArray[] = getTeilStringArrayRechts();
+						setTeilStringArray(teilStringArray);
+						break;
+					}
+				} else {
+					String teilStringArray[] = getTeilStringArrayMitte();
+					setTeilStringArray(teilStringArray);
+					break;
+				}
+			} else {
+				String teilStringArray[] = getTeilStringArrayLinks();
+				setTeilStringArray(teilStringArray);
+				break;
+			}
+			stelle++;
+		}
+
+		/**
+		 * Aus den übrig gebliebenen Arrays wird das größte herausgesucht.
+		 * Sobald ein Array aus den übriggebliebenen den Inhalt null hat wird
+		 * dort die Schleife abgebrochen.
+		 */
+
+		int i = 0;
+		String laengstesPalindrom = "";
+		String palindrom1;
+		String palindrom2;
+		String teilStringArray[] = getTeilStringArray();
+
+		while (i <= teilStringArray.length) {
+
+			// falls nächster Inhalt des Arrays null ist -> abbruch, obwohl
+			// vielleicht mehr arrays existieren.
+			if (teilStringArray[i + 1] == null) {
+
+				laengstesPalindrom = teilStringArray[0];
+				break;
+			}
+
+			else {
+
+				palindrom1 = teilStringArray[i];
+				palindrom2 = teilStringArray[i + 1];
+				i++;
+
+				if (palindrom1.length() > palindrom2.length()) {
+					laengstesPalindrom = palindrom1;
+
+				}
+
+				else if (palindrom1.length() < palindrom2.length()) {
+					laengstesPalindrom = palindrom2;
+
+				}
+
+			}
+
+		}
+
+		setAusgabe(laengstesPalindrom);
+
+	}
+
+	public void ausgabe() {
+		String ausgabe = getAusgabe();
+		System.out.println("Längstes Palindrom: " + ausgabe);
+	}
+
+	public static void main(String[] args) {
+
+		Palindrom palindrom = new Palindrom();
+
+		palindrom.eingabe();
+		palindrom.filterStrings();
+		palindrom.check();
+		palindrom.verarbeite();
+		palindrom.ausgabe();
+
+	}
+
+}

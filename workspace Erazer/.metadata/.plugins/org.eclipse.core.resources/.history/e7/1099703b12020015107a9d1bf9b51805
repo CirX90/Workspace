@@ -1,0 +1,25 @@
+package aufgabenblatt4_2;
+
+public class Lokomotive {
+	
+	// Variablen
+	private final int laenge;
+	private final int typ;
+	private Wagen ersterWagen;
+	
+	public Lokomotive(int laenge, int typ) {
+		this.laenge = laenge;
+		this.typ = typ;
+	}
+	
+	// getter
+	public Wagen getErsterWagen() {
+		return ersterWagen;
+	}
+	
+	// setter
+	public void setErsterWagen(Wagen ersterWagen) {
+		this.ersterWagen = ersterWagen;
+	}
+
+}

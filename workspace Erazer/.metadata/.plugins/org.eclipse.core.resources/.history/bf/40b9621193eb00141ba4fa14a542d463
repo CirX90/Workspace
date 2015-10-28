@@ -1,0 +1,25 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class Beginn {
+	
+public static void main(String [] args) {
+	
+	int zahl = 0, ergebnis = 0;
+	
+	Scanner scanner = new Scanner(System.in);
+	System.out.println(ergebnis);
+	int wert = scanner.nextInt();
+	scanner.close();
+	
+	while(wert >= zahl) {
+		ergebnis += wert;
+	System.out.println(ergebnis);
+		wert++;
+		}
+	
+	System.out.print("Die Zahlenreihe von 0 bis" + ergebnis);
+	
+	}
+}

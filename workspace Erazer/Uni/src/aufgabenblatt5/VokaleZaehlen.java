@@ -1,0 +1,163 @@
+/**
+ * Praktikum TI-PM Gruppe 2, SS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Milan Hering 	 (milan.hering@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 5, Aufgabe 1
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt5;
+
+import java.util.Scanner;
+
+/**
+ * Dieses Programm dient dazu, die Anzahl von Vokalen, kleine als auch groﬂe,
+ * einzeln aus einer Eingabe auszuz‰hlen.
+ * 
+ * @author abx711
+ *
+ */
+
+public class VokaleZaehlen {
+
+	private int anzahlGrossbuchstaben;
+	private int anzahlKleinbuchstaben;
+	private String eingabe;
+
+	private Scanner scanner = new Scanner(System.in);
+
+	/*
+	 * ******* GETTER/SETTER ********
+	 */
+
+	public int getAnzahl_grossbuchstaben() {
+		return anzahlGrossbuchstaben;
+	}
+
+	public void setAnzahl_grossbuchstaben(int anzahlGrossbuchstaben) {
+		this.anzahlGrossbuchstaben = anzahlGrossbuchstaben;
+	}
+
+	public int getAnzahl_kleinbuchstaben() {
+		return anzahlKleinbuchstaben;
+	}
+
+	public void setAnzahl_kleinbuchstaben(int anzahlKleinbuchstaben) {
+		this.anzahlKleinbuchstaben = anzahlKleinbuchstaben;
+	}
+
+	public String getEingabe() {
+		return eingabe;
+	}
+
+	public void setEingabe(String eingabe) {
+		this.eingabe = eingabe;
+	}
+
+	/**
+	 * Aufnahme einer Eingabe per Scanner aus der Konsole und Speicherung
+	 * dieser.
+	 */
+
+	public void eingabe() {
+
+		System.out.println("Bitte Text eingeben in welchem die Vokale "
+				+ "gez‰hlt werden sollen.");
+
+		String eingabe = scanner.nextLine();
+
+		if (eingabe == null) {
+
+			System.out.println("Keine Vokale gefunden.");
+		}
+
+		scanner.close();
+
+		setEingabe(eingabe);
+
+	}
+
+	/**
+	 * Einzelzeichen des Strings werden nach und nach mit Kleinvokalen per
+	 * charAt verglichen. Bei ‹bereinstimmung wird Anzahl mitgez‰hlt.
+	 * Abbruchbedingung der Schleife wenn die Indexposition der Zeichen der
+	 * Eingabe die wahre L‰nge der Eingabe erreicht.
+	 */
+
+	public void filterGross() {
+
+		String eingabe = getEingabe();
+
+		int anzahlGross = 0;
+
+		// Methode length als L‰nge des Strings.
+		for (int index = 0; index < eingabe.length(); index++) {
+
+			// charAt liest das Zeichen des Strings an Indexstelle index aus.
+			if (eingabe.charAt(index) == 'A' || eingabe.charAt(index) == 'E'
+					|| eingabe.charAt(index) == 'I'
+					|| eingabe.charAt(index) == 'O'
+					|| eingabe.charAt(index) == 'U') {
+
+				anzahlGross++;
+			}
+
+		}
+
+		setAnzahl_grossbuchstaben(anzahlGross);
+
+	}
+
+	/**
+	 * Einzelzeichen des Strings werden nach und nach mit Kleinvokalen per
+	 * charAt verglichen. Bei ‹bereinstimmung wird Anzahl mitgez‰hlt.
+	 * Abbruchbedingung der Schleife wenn die Indexposition der Zeichen der
+	 * Eingabe die wahre L‰nge der Eingabe erreicht.
+	 */
+
+	public void filterKlein() {
+
+		String eingabe = getEingabe();
+
+		int anzahlKlein = 0;
+
+		// Methode length als L‰nge des Strings.
+		for (int index = 0; index < eingabe.length(); index++) {
+
+			// charAt liest das Zeichen des Strings an Indexstelle i aus.
+			if (eingabe.charAt(index) == 'a' || eingabe.charAt(index) == 'e'
+					|| eingabe.charAt(index) == 'i'
+					|| eingabe.charAt(index) == 'o'
+					|| eingabe.charAt(index) == 'u') {
+
+				anzahlKlein++;
+			}
+
+		}
+
+		setAnzahl_kleinbuchstaben(anzahlKlein);
+
+	}
+
+	public void ausgabe() {
+
+		int anzahlKlein = getAnzahl_kleinbuchstaben();
+		int anzahlGross = getAnzahl_grossbuchstaben();
+
+		System.out.println("Anzahl kleine Vokale: " + anzahlKlein);
+		System.out.println("Anzahl groﬂe Vokale: " + anzahlGross);
+
+	}
+
+	public static void main(String[] args) {
+
+		VokaleZaehlen vokale = new VokaleZaehlen();
+
+		vokale.eingabe();
+		vokale.filterGross();
+		vokale.filterKlein();
+		vokale.ausgabe();
+
+	}
+
+}

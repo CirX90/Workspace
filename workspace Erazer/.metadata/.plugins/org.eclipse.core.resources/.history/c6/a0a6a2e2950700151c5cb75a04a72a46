@@ -1,0 +1,171 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class Playground {
+
+	public static boolean isPalindrom(String eingabe) {
+
+		int vorne = 0;
+		int laenge = eingabe.length();
+		int abzug = 1;
+		int hinten = eingabe.length();
+
+		while (vorne < laenge) {
+
+			if (eingabe.charAt(vorne) == eingabe.charAt(hinten - abzug)) {
+
+				vorne++;
+				abzug++;
+
+			}
+
+			else if (eingabe.charAt(vorne) != eingabe.charAt(hinten - abzug)) {
+
+				vorne++;
+				abzug++;
+
+				return false;
+
+			}
+
+		}
+
+		return true;
+
+	}
+
+	/**
+	 * String substring(int start) liefert einen String, der alle Zeichen des
+	 * Strings, für den die Methode aufgerufen wurde, ab der Position start
+	 * enthält.
+	 * 
+	 * String substring(int start, int end) liefert einen String, der alle
+	 * Zeichen ab der Position start bis end - 1 enthält. Die Länge ist also end
+	 * - start.
+	 * 
+	 * String trim() schneidet alle zusammenhängenden Leer- und Steuerzeichen
+	 * (das sind die Zeichen kleiner oder gleich '\u0020') am Anfang und Ende
+	 * der Zeichenkette ab.
+	 */
+
+	public void testStrings(String eingabe) {
+
+		int vorne = 0;
+		int laenge = eingabe.length();
+		// Abzug beginnt diesmal bei 0 weil Methode substring ende schon -1
+		// macht
+		int abzug = 0;
+		int hinten = eingabe.length();
+		String[] teilStringArray = new String[eingabe.length() - 1];
+		int arrayIndex = 0;
+		String teilString;
+
+		while (laenge >= 3) {
+			
+			System.out.println("nächste Runde");
+
+			teilString = eingabe.substring(vorne, hinten);
+			System.out.println(teilString);
+			laenge -= 2;
+			hinten--;
+			vorne++;
+			
+			eingabe = teilString;
+			
+			// l a g e r r e g a l
+			// Teilstring komplett Pladindrom?
+			if (isPalindrom(teilString) == true) {
+				
+				
+
+				teilStringArray[arrayIndex] = teilString;
+				arrayIndex++;
+				
+				
+				
+			}
+			
+			else if(isPalindrom(teilString) == false) {
+				System.out.println("nicht erreicht");
+				
+				
+				
+			}
+
+		}
+		
+		// returned alle Teilstrings die ein Palindrom sind
+		//return teilStringArray;
+
+	}
+
+	public String check(String eingabe, String eingabe2) {
+
+		int vorne = 0;
+		int laenge = eingabe.length();
+		int abzug = 1;
+		int hinten = eingabe.length();
+
+		char[] buchstabeArray = new char[eingabe.length()];
+		String pali = "";
+
+		// Charindex des Wortes beginnt bei 0, aber Länge startet mit 1
+		while (vorne < laenge) {
+
+			if (eingabe.charAt(vorne) == eingabe.charAt(hinten - abzug)) {
+
+				buchstabeArray[vorne] = eingabe.charAt(vorne);
+
+				vorne++;
+				abzug++;
+
+			}
+
+			else if (eingabe.charAt(vorne) != eingabe.charAt(hinten - abzug)) {
+
+				abzug++;
+				laenge--;
+
+			}
+
+		}
+
+		for (int j = 0; j < buchstabeArray.length; j++) {
+
+			// String Palindrom wird gebildet mit dem Inhalt der Arrays
+			pali += buchstabeArray[j];
+
+		}
+
+		return pali;
+	}
+
+	public void verarbeite(String teilStringArray[]) {
+
+		System.out.println("Checkeingabe: " + teilStringArray[0]);
+		System.out.println("Checkeingabe: " + teilStringArray[1]);
+		System.out.println("Checkeingabe: " + teilStringArray[2]);
+
+	}
+
+	public static void main(String[] args) {
+
+		Playground palindrom = new Playground();
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Wort für Palindromprüfung eingeben.");
+		String eingabe = scanner.nextLine();
+		eingabe = eingabe.toLowerCase().replace(" ", "");
+		scanner.close();
+
+		// String eingabe2 = eingabe;
+		// for (int j = eingabe.length() - 1; j >= 0; j--)
+		// eingabe2 += eingabe.charAt(j);
+		// System.out.println(eingabe2);
+
+		palindrom.testStrings(eingabe);
+		//palindrom.verarbeite(palindrom.testStrings(eingabe));
+	}
+
+}

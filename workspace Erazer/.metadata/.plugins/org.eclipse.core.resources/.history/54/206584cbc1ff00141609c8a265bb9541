@@ -1,0 +1,33 @@
+package aufgabenblatt4_2;
+
+import Bahnzuege.Wagen;
+
+public class Lokomotive {
+
+	private final int lokLaenge;
+	private final int lokTyp;
+
+	private Wagen ersterWagen;
+
+	// Konstruktor erzeugt eine neue Lokomotive
+	// erwartet Länge und Typ
+	public Lokomotive(int laenge, int typ) {
+		this.lokLaenge = laenge;
+		this.lokTyp = typ;
+		ersterWagen = null;
+	}
+
+	public void setErsterWagen(Wagen neuWagen) {
+		this.ersterWagen = neuWagen;
+	}
+
+	public Wagen getErsterWagen() {
+		return ersterWagen;
+	}
+
+	public void setErsterWagen1(Wagen neuWagen) {
+		ersterWagen.setNaechsterWagen(neuWagen);
+
+	}
+
+}

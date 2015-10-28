@@ -1,0 +1,14 @@
+package aufgabenblatt3_1;
+
+public class Ausdruecke {
+	public static void main(String[] args) {
+		
+		double radius = 1.4;
+		double seitenlänge = 0.4;
+		boolean vergleich = radius > 1.5 || seitenlänge < 0.5;
+		System.out.println(vergleich);
+		
+		
+	}
+
+}

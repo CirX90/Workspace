@@ -1,0 +1,25 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class While {
+	
+	public static void main(String[] args) {
+		
+		int zaehler = 1;
+		int ergebnis = 0;
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ganze Zahl eingeben.");
+		int wert = scanner.nextInt();
+		scanner.close();
+		
+		while (zaehler <= wert) {
+			ergebnis += zaehler;
+		System.out.println(ergebnis);
+			zaehler++;
+		}
+		System.out.println("Die Summe der Zahlen von 1 bis" + wert + " ist " + ergebnis);
+	}
+
+}
