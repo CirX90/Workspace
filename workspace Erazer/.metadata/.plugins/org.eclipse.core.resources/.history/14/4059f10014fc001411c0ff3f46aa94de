@@ -1,9 +1,0 @@
-package aufgabenblatt4_2;
-
-public class Zug {
-	
-	public Zug() {
-		
-		Lokomotive lok = new Lokomotive();
-	}
-}

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;schleifen.ueben.java&apos; to &apos;Üben.java&apos;&#x0D;&#x0A;- Original project: &apos;Üben&apos;&#x0D;&#x0A;- Original element: &apos;schleifen.ueben.java&apos;&#x0D;&#x0A;- Renamed element: &apos;schleifen.Üben.java&apos;" description="Rename compilation unit &apos;ueben.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;schleifen{ueben.java" name="Üben.java" references="false" stamp="1432576722205" version="1.0"/>
-</session>
