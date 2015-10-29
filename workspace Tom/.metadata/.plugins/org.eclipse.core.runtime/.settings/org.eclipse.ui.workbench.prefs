@@ -21,3 +21,4 @@ org.eclipse.e4.ui.css.theme.e4_default6.0,6.1,6.2,6.3.org.eclipse.ui.workbench.I
 org.eclipse.e4.ui.css.theme.e4_default6.0,6.1,6.2,6.3.org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_END=255,255,255
 org.eclipse.e4.ui.css.theme.e4_default6.0,6.1,6.2,6.3.org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_START=255,255,255
 org.eclipse.jdt.ui.editors.textfont=1|Consolas|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands/>

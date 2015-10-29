@@ -1,0 +1,8 @@
+package praktikum;
+
+public class Student {
+	
+	public String vorname = "";
+	
+	
+}
