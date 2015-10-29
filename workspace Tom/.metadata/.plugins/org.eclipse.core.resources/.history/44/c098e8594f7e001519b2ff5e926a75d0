@@ -1,0 +1,15 @@
+package aufgabenblatt1;
+
+import java.awt.List;
+
+public class Student {
+
+	// public Pruefungsleistung pruefungsleistung;
+
+	public String vorname = "";
+	public String nachname = "";
+	public int matrikelnummer;
+
+	public List<Pruefungsleistung> pruefungsleistung = new LinkedList<Pruefungsleistung>();
+
+}

@@ -43,10 +43,14 @@
 <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
 <fullyQualifiedTypeName name="vererbung.Vererbung"/>
 <fullyQualifiedTypeName name="Equals.Mensch"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="eachArray.Lebewesen"/>
 <fullyQualifiedTypeName name="grundlagen.Sandbox"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="student.Studentenverzeichnis"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="aufgabenblatt1.Student"/>
+<fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="aufgabenblatt1.Pruefungsleistung"/>
 </qualifiedTypeNameHistroy>
