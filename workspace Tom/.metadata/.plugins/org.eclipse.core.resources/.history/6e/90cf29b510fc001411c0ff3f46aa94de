@@ -1,0 +1,9 @@
+package aufgabenblatt4_2;
+
+public class Lokomotive {
+
+	public final int laenge = 0;
+	public final int typ = 0;
+	
+	Wagen ersterWagen = new Wagen();
+}

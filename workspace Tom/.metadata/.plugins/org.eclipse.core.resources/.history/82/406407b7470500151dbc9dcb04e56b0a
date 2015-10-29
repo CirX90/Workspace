@@ -1,0 +1,39 @@
+package aufgabenblatt5_3;
+
+import java.util.Scanner;
+
+public class Palindrom {
+	
+	public void checkPalindrom(String eingabe) {
+		
+		int i = 0;
+		int j = eingabe.length();
+		int k = 1;
+		int punkte = 0;
+		
+			while (i < j) {
+			 
+				if (eingabe.charAt(i) == eingabe.charAt(j-k)) {
+					punkte++;
+					
+					}
+				i++;
+				
+			}
+			System.out.println(punkte);
+	}
+	
+	public static void main(String[] args) {
+		
+		Palindrom palindrom = new Palindrom();
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Wort für Palindromprüfung eingeben.");
+		String eingabe = scanner.nextLine();
+		eingabe = eingabe.toLowerCase().replace(" ", "");
+		scanner.close();
+		
+		palindrom.checkPalindrom(eingabe);
+	}
+
+}

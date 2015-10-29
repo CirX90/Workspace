@@ -1,0 +1,92 @@
+package aufgabenblatt5_2;
+
+import java.util.Scanner;
+
+public class Verschluesselung {
+	
+	private final int schluessel = 4;
+
+	public int getVerschiebung() {
+		return schluessel;
+	}
+
+	public String verschluesseln(String eingabe, int verschiebung) {
+		
+		char buchstabe;
+		char [] buchstabeArray;
+		buchstabeArray = new char[eingabe.length()];
+		
+		for (int zaehler = 0; zaehler < eingabe.length(); zaehler++) {
+			
+			int zwischenschritt = eingabe.charAt(zaehler);
+			zwischenschritt += verschiebung;
+			
+			// buchstabe - typecast von int Zwischenschritt
+			buchstabe = (char)zwischenschritt;
+			// einzelne Buchstaben werden gespeichert -> array
+			buchstabeArray[zaehler] = buchstabe;
+			
+		}
+		
+		String ver_Rueckgabe = "";
+
+		for (int j = 0; j < buchstabeArray.length; j++) {
+			
+			ver_Rueckgabe = ver_Rueckgabe + buchstabeArray[j];
+			
+		}
+		
+		return ver_Rueckgabe;
+		
+	}
+
+	public void entschluesseln(String ver_Rueckgabe) {
+		
+		System.out.println("Verschlüsselter Text: " + ver_Rueckgabe);
+		
+		char buchstabe;
+		char [] buchstabeArray;
+		buchstabeArray = new char[ver_Rueckgabe.length()];
+		
+		for (int zaehler = 0; zaehler < ver_Rueckgabe.length(); zaehler++) {
+			
+			int zwischenschritt = ver_Rueckgabe.charAt(zaehler);
+			zwischenschritt -= schluessel;
+			
+			// buchstabe - typecast von int Zwischenschritt
+			buchstabe = (char)zwischenschritt;
+			// einzelne Buchstaben werden gespeichert -> array
+			buchstabeArray[zaehler] = buchstabe;
+			
+		}
+		
+		String ent_Rueckgabe = "";
+
+		for (int j = 0; j < buchstabeArray.length; j++) {
+			
+			ent_Rueckgabe = ent_Rueckgabe + buchstabeArray[j];
+			
+		}
+
+		System.out.println("Entschlüsselter Text: " + ent_Rueckgabe);
+			
+	}
+
+	public static void main(String[] args) {
+		
+		Verschluesselung caesar = new Verschluesselung();
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Bitte geben Sie einen Text ein "
+				+ "der verschlüsselt werden soll.");
+		// Nur große Buchstaben zulassen
+		String eingabe = scanner.nextLine();
+		eingabe = eingabe.toUpperCase().replace(" ", "");
+		System.out.println(eingabe);
+		scanner.close();
+		
+		caesar.entschluesseln(caesar.verschluesseln(eingabe, caesar.getVerschiebung()));
+
+	}
+
+}

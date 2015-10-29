@@ -1,0 +1,47 @@
+/**package aufgabenblatt5_2;
+
+public class Verschluesselung2 {
+	
+	private int verschiebung;
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	public Verschluesselung2(int verschiebung) {
+		while(verschiebung < 0) {
+			verschiebung += 26;
+		}
+		this.verschiebung = verschiebung%26;
+		
+	}
+	
+	public Verschluesselung2() {
+		this(4);
+	}
+	
+	public String verschluesseln(String s) {
+		return 
+	}
+	
+	private String verschluesseln(String s, int verschiebung) {
+		s = s.toUpperCase();
+		char[] chars = s.toCharArray();
+		for(int i = 0; i < s.length(); i++) {
+			chars[i] = verschluesseln(chars[i], verschiebung);
+		return String.valueOf(chars);
+		}
+	}
+	
+	private char verschluesseln(char c, int verschiebung) {
+		if(c >= 'A' && c <= 'Z') {
+			
+			return (char)(c-'A'+verschiebung) % 26 + 'A');
+		}
+		else {
+			System.out.println("Bitte nur große Buchstaben zwischen A und Z angeben.");
+			System.exit(0);
+		}
+			
+	}
+} */

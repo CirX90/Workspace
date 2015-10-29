@@ -1,0 +1,75 @@
+/**
+ * Praktikum Programmiermethodik, SS 2015
+ * Gruppe: Jannes Volkens (jannes.volkens@haw-hamburg.de),
+ * Leon Schlichting (leon.schlichting@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 4, Aufgabe 2
+ */
+
+package Bahnzuege;
+
+public class Lokomotive {
+
+	/**
+	 * Variable laenge initialisieren
+	 */
+	//NKB Gross
+	private final int LAENGE;
+
+	/**
+	 * Variable typ initialisieren
+	 */
+	private final int TYP;
+
+	/**
+	 * Objektvariable ersterWagen der Klasse Wagen wird initialisiert
+	 */
+	private Wagen ERSTERWAGEN;
+
+	/**
+	 * Getter und Setter
+	 * 
+	 * Methode getLaenge gibt den Wert laenge der Klasse Lokomotive wieder
+	 */
+	public int getLaenge() {
+		return LAENGE;
+	}
+
+	/**
+	 * Methode getTyp gibt den Wert typ der Klasse Lokomotive wieder
+	 */
+	public int getTyp() {
+		return TYP;
+	}
+
+	/**
+	 * Methode getErsterWagen gibt den Wert ersterWagen der Klasse Lokomotive
+	 * wieder
+	 */
+	public Wagen getErsterWagen() {
+		return ERSTERWAGEN;
+	}
+
+	/**
+	 * Methode setErsterWagen initialisiert den Wert ersterWagen
+	 */
+	public void setErsterWagen(Wagen ersterWagen) {
+		this.ERSTERWAGEN = ersterWagen;
+	}
+
+	/**
+	 * Konstruktor
+	 */
+	public Lokomotive(int typ, int laenge) {
+		this.LAENGE = laenge;
+		this.TYP = typ;
+		ERSTERWAGEN = null;
+	}
+
+	/**
+	 * Methode toString gibt Beschreibung der Lokomotive wieder
+	 */
+	public String toString() {
+		return "Lokomotive\n" + "Typnummer: " + TYP + "\n" + "Länge: " + LAENGE
+				+ "\n";
+	}
+}

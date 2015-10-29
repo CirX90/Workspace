@@ -1,0 +1,17 @@
+package aufgabenblatt4_2;
+
+public class Kontrollstation {
+
+	public static void main(String[] args) {
+		
+
+		Lokomotive lok1 = new Lokomotive(60, 1337);
+		Zug zug1 = new Zug(lok1);
+		
+		zug1.wagenHinzufuegen(new Wagen(60, 20));
+		zug1.wagenHinzufuegen(new Wagen(60, 25));
+		
+		zug1.info();
+	}
+
+}

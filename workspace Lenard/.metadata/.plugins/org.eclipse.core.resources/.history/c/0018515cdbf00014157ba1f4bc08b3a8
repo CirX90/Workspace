@@ -1,0 +1,23 @@
+package grundlagen;
+
+public class Sandbox {
+	public static void main(String[] args) {
+		
+	
+			boolean markiert = true;
+			double zahl = 15.1;
+						
+			if (!markiert ^ zahl == (int) 15 ){
+			//boolean aussage = true;
+			
+			System.out
+					.println("b) Die beiden Aussagen, Flag ist true oder der ganzzahlige "
+							+ "Anteil der Fließkommazahl ist ungleich 15, sind "
+							+ "wahr" + "."); }
+			else  {
+				System.out.println("Weit daneben!");
+			}
+			
+				
+	}		
+}

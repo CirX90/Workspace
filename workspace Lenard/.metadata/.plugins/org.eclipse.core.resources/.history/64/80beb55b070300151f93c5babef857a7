@@ -1,0 +1,88 @@
+package aufgabenblatt4_2;
+
+public class Zug {
+
+	private Lokomotive lok;
+
+	// Konstruktor
+	public Zug(Lokomotive lok) {
+		this.lok = lok;
+	}
+
+	// Fügt einen Wagen in diesen Zug ein.
+	public void wagenHinzufuegen(Wagen neuWagen) {
+		neuWagen.setNaechsterWagen(lok.getErsterWagen());
+		lok.setErsterWagen(neuWagen);
+	}
+
+	// Hängt den ersten Wagen aus diesem Zug aus und liefert ihn zurück.
+	public Wagen erstenWagenEntfernen() {
+		Wagen ersterWagen = lok.getErsterWagen();
+		if (ersterWagen != null) {
+			lok.setErsterWagen(ersterWagen.getNaechsterWagen());
+		}
+		return ersterWagen;
+	}
+
+	// Hängt alle Wagen des anderen Zuges in diesen Zug ein. Der andere Zug hat
+	// dann keine Wagen mehr.
+	public void zugAnhaengen(Zug andererZug) {
+		if (this != andererZug) {
+			while (andererZug.lok.getErsterWagen() != null) {
+				wagenHinzufuegen(andererZug.erstenWagenEntfernen());
+			}
+		}
+	}
+
+	// Anzahl an erstellen Wagen wird zurückgegeben.
+	public int getWagenAnzahl() {
+		int anzahl = 0;
+		Wagen wagen = lok.getErsterWagen();
+		while (wagen != null) {
+			anzahl++;
+			wagen = wagen.getNaechsterWagen();
+		}
+		return anzahl;
+	}
+
+	// Passagierkapazitaet der Wagen wird addiert und zurückgegeben.
+	public int getKapazitaet() {
+		int kapazitaet = 0;
+		Wagen wagen = lok.getErsterWagen();
+
+		while (wagen != null) {
+			kapazitaet += wagen.getKapazitaet();
+			wagen = wagen.getNaechsterWagen();
+		}
+		return kapazitaet;
+	}
+
+	// Länge von Lok und allen Wagen addiert und ausgegeben.
+	public int getLaenge() {
+		int laenge = lok.getLokLaenge();
+		Wagen wagen = lok.getErsterWagen();
+
+		while (wagen != null) {
+			laenge += wagen.getLaenge();
+			wagen = wagen.getNaechsterWagen();
+		}
+
+		return laenge;
+	}
+
+	// Gibt die Einzelheiten dieses Zuges auf der Konsole aus.
+	public int info() {
+		System.out.format("Lokomotive: Typ = %d, Länge = %dm%n",
+				lok.getLokTyp(), lok.getLokLaenge());
+		int nummer = 1;
+		Wagen wagen = lok.getErsterWagen();
+		while (wagen != null) {
+			System.out.format(
+					"Wagen #%d: Passagierkapazität = %d, Länge = %dm, Seriennummer = %d%n",
+					nummer, wagen.getKapazitaet(), wagen.getLaenge(), wagen.getWagenSeriennummer());
+			wagen = wagen.getNaechsterWagen();
+			nummer++;
+		}
+		return nummer;
+	}
+}

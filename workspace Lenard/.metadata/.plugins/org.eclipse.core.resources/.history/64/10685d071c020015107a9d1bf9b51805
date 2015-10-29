@@ -1,0 +1,38 @@
+package aufgabenblatt4_2;
+
+public class Wagen {
+	
+	private final int wagenKapazitaet;
+	private final int wagenLaenge;
+	private final int wagenSeriennummer;
+	
+	private Wagen naechsterWagen;
+	
+	public Wagen(int kapazitaet, int laenge, int seriennummer) {
+		this.wagenLaenge = laenge;
+		this.wagenKapazitaet = kapazitaet;
+		this.wagenSeriennummer = seriennummer;
+		seriennummer = (int) ((Math.random() * 100) + 1) ;
+	}
+	
+	public int getLaenge() {
+		return wagenLaenge;
+	}
+
+	public int getKapazitaet() {
+		return wagenKapazitaet;
+	}
+
+	public int getWagenSeriennummer() {
+		return wagenSeriennummer;
+	}
+
+	public Wagen getNaechsterWagen() {
+		return naechsterWagen;
+	}
+
+	public void setNaechsterWagen(Wagen naechsterWagen) {
+		this.naechsterWagen = naechsterWagen;
+	}
+
+}

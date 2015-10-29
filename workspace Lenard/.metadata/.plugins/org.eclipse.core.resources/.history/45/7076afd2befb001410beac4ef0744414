@@ -1,0 +1,132 @@
+package aufgabenblatt4_1;
+
+import java.util.Scanner;
+
+public class Tamagotchi {
+
+	// Deklarieren, Startwert = 0,
+	private int hunger = -1;
+	private int langeweile = -1;
+	private int muedigkeit = -1;
+	private int punkte = -3;
+
+	Scanner scanner = new Scanner(System.in);
+
+	// Werte erhöhen +1
+	private void tick() {
+
+		hunger++;
+		langeweile++;
+		muedigkeit++;
+
+	}
+
+	// Methode schlaf setzt Müdigkeit u. Langeweile auf 0
+	// hunger +1
+	private void schlaf() {
+
+		muedigkeit = 0;
+		hunger++;
+		langeweile = 0;
+	}
+
+	private void spiel() {
+
+		langeweile = 0;
+		hunger++;
+		muedigkeit++;
+	}
+
+	private void iss() {
+
+		hunger = 0;
+		langeweile++;
+
+	}
+
+	private void nichts() {
+
+	}
+
+	private void ende() {
+
+		scanner.close();
+		System.out.println("Schade! Bis zum nächsten Mal!");
+		System.exit(0);
+
+	}
+
+	public void verarbeiteKommando(String kommando) {
+
+		if (kommando.equals("iss")) {
+			iss();
+		} else if (kommando.equals("schlaf")) {
+			schlaf();
+		} else if (kommando.equals("spiel")) {
+			spiel();
+		} else if (kommando.equals("nichts")) {
+			nichts();
+		} else if (kommando.equals("ende")) {
+			ende();
+		} else {
+			System.out.println("Ich habe deinen Befehl leider "
+					+ "nicht verstanden. \nBitte wiederhole den Befehl! \n"
+					+ "Deine Möglichkeiten sind iss, schlaf, spiel, nichts"
+					+ " oder ende.");
+		}
+	}
+
+	private String getNextKommando() {
+
+		System.out.println("Bitte gib einen Befehl ein!");
+		String kommando = scanner.nextLine();
+		return kommando;
+
+	}
+
+	public void printPunktestand(int punkte) {
+
+		System.out.println("Aktueller Hungerzustand: " + hunger + "\n"
+				+ "Aktueller Langeweilezustand: " + langeweile + "\n"
+				+ "Aktueller Müdigkeitszustand: " + muedigkeit + "\n"
+				+ "Aktueller Punktestand: " + punkte);
+		if (hunger >= 4) {
+			System.out.println("Mir geht es nicht gut! Ich bin hungrig!");
+		} else if (langeweile >= 4) {
+			System.out.println("Mir geht es nicht gut! Mir ist langweilig!");
+		} else if (muedigkeit >= 4) {
+			System.out.println("Mir geht es nicht gut! Ich bin müde!");
+		} else {
+			System.out.println("Mir geht es sehr gut. Ich danke dir!");
+		}
+	}
+
+	// Getter für Punkte
+	public int getPunktestand() {
+		punkte = hunger >= 4 ? punkte - 2 : punkte + 1;
+		punkte = muedigkeit >= 4 ? punkte - 2 : punkte + 1;
+		punkte = langeweile >= 4 ? punkte - 2 : punkte + 1;
+		return punkte;
+	}
+
+	// Main-Methode 
+	public static void main(String[] args) {
+
+		Tamagotchi tama = new Tamagotchi();
+
+		System.out
+				.println("Hallo ich bin ein Tamagochi. \nDu kannst mir Befehle geben, "
+						+ "wenn du willst, dass es mir gut geht. \n"
+						+ "Diese lauten: iss, spiel, schlaf oder nichts. \n"
+						+ "Mit ende beendest du dieses Spiel.\n");
+
+		while (true) {
+			tama.tick();
+			tama.printPunktestand(tama.getPunktestand());
+			tama.verarbeiteKommando(tama.getNextKommando());
+			System.out.println();
+		}
+
+	}
+
+}

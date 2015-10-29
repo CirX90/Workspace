@@ -1,0 +1,10 @@
+package aufgabenblatt4_2;
+
+public class Wagen {
+
+	public final int laenge = 0;
+	public final int passagierkapazitaet = 0;
+	
+	Wagen naechsterWagen = new Wagen();
+	
+}

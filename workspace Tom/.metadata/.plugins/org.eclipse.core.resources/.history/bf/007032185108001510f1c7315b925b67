@@ -1,0 +1,245 @@
+/**
+ * Praktikum TI-PM Gruppe 2, SS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Milan Hering 	 (milan.hering@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 5, Aufgabe 2
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt5;
+
+import java.util.Scanner;
+
+/**
+ * Dieses Programm dient dazu, Wörter um eine feste Stellenanzahl verschieben,
+ * also ver- und entschlüsseln zu können.
+ * 
+ * @author abx711
+ *
+ */
+
+public class Verschluesselung {
+
+	/**
+	 * Finale Variable schluessel gibt die Stellen um die ver-/entschlüsselt
+	 * werden soll.
+	 */
+
+	private final int schluessel = 4;
+
+	/**
+	 * Finale Variable reset gibt die Möglichkeit die Grenzen des Alphabets
+	 * einzuhalten.
+	 */
+
+	private final int reset = 26;
+
+	/**
+	 * Finale Variable untergrenze entspricht der Untergrenze des Alphabets.
+	 */
+
+	private final int untergrenze = 65;
+
+	/**
+	 * Finale Variable obergrenze entspricht der Obergrenze des Alphabets.
+	 */
+
+	private final int obergrenze = 90;
+
+	/**
+	 * Variable eingabe in der im Laufe des Programms die Eingabe des Benutzers
+	 * abgelegt wird.
+	 */
+
+	private String eingabe;
+
+	/**
+	 * Variable scanner, mit der es ermöglicht wird eine Eingabe des Benutzers
+	 * zu erfassen.
+	 */
+
+	private Scanner scanner = new Scanner(System.in);
+
+	/**
+	 * Getter Methode für die Eingabe des Benutzers um diese im Laufe des
+	 * Programms immer wieder aufrufen zu können.
+	 * 
+	 * @return eingabe
+	 */
+
+	public String getEingabe() {
+		return eingabe;
+	}
+	
+	/**
+	 * Setter Methode, um die Eingabe immer wieder ablegen zu können.
+	 * @param eingabe
+	 */
+
+	public void setEingabe(String eingabe) {
+		this.eingabe = eingabe;
+	}
+
+	/**
+	 * Aufnahme einer Eingabe per Scanner aus der Konsole und Speicherung
+	 * dieser.
+	 */
+
+	public void eingabe() {
+
+		System.out.println("Bitte geben Sie einen Text in Großbuchstaben ein "
+				+ "der verschlüsselt werden soll.");
+
+		String eingabe = scanner.nextLine();
+
+		setEingabe(eingabe);
+
+		/**
+		 * Methode um zu testen ob in der Eingabe unerlaubte Kleinbuchstaben
+		 * enhalten sind. Die Einzelzeichen des Strings werden dafür in die
+		 * Dezimalzahlen aus der ASCII Tabelle umgewandelt und verglichen ob sie
+		 * in dem Bereich der Großbuchstaben liegen. Wenn das nicht der Fall
+		 * sein sollte kriegt der Nutzer solange die Möglichkeit ein neues Wort
+		 * einzugeben bis dieses gültig ist.
+		 */
+
+	}
+
+	public void verarbeiteEingabe() {
+
+		String eingabe = getEingabe();
+
+		// Schleife testet ob Kleinbuchstaben in dem Wort enthalten sind
+		for (int zaehler = 0; zaehler < eingabe.length(); zaehler++) {
+
+			// passende Dezimalzahlen der einzelnen Zeichen werden ausgelesen
+			int zwischenschritt = eingabe.charAt(zaehler);
+
+			// falls Zahl größer der Dezi Zahl von Z
+			if (zwischenschritt > obergrenze || zwischenschritt < untergrenze) {
+				System.out
+						.println("Es sind keine Kleinbuchstaben oder "
+								+ "Sonderzeichen für das zu ver- und entschlüsselnde Wort"
+								+ " zugelassen.\n" + "Gib eine neues Wort ein.");
+				eingabe = scanner.nextLine();
+				setEingabe(eingabe);
+
+				continue;
+
+			}
+
+		}
+
+		scanner.close();
+
+	}
+
+	/**
+	 * Einzelzeichen des Strings werden in Dezimalzahlen umgewandelt umd mit dem
+	 * Schlüssel addiert um die Verschlüsselung zu erreichen. Sollte das Zeichen
+	 * dadurch das Großbuchstaben-Alphabet überschreiten wird es mit reset
+	 * verrechnet um zum Beginn des Alphabets geleitet. Zahlen werden wieder in
+	 * Zeichen umgewandelt, als einzelne Arrays gespeichert und zu einem neuen
+	 * String zusammengefügt. Dieser String wird zurückgegeben.
+	 * 
+	 * @return verschluesselRueckgabe
+	 */
+
+	public String verschluesseln() {
+
+		String eingabe = getEingabe();
+		char buchstabe;
+		char[] buchstabeArray;
+		buchstabeArray = new char[eingabe.length()];
+
+		for (int zaehler = 0; zaehler < eingabe.length(); zaehler++) {
+
+			int zwischenschritt = eingabe.charAt(zaehler);
+
+			zwischenschritt += schluessel;
+
+			if (zwischenschritt > obergrenze) {
+				zwischenschritt -= reset;
+			}
+
+			// buchstabe - typecast von int Zwischenschritt
+			buchstabe = (char) zwischenschritt;
+			// einzelne Buchstaben werden gespeichert -> array
+			buchstabeArray[zaehler] = buchstabe;
+
+		}
+
+		String verschluesselRueckgabe = "";
+
+		for (int j = 0; j < buchstabeArray.length; j++) {
+
+			verschluesselRueckgabe = verschluesselRueckgabe + buchstabeArray[j];
+
+		}
+
+		System.out.println("Verschlüsselter Text: " + verschluesselRueckgabe);
+
+		return verschluesselRueckgabe;
+
+	}
+
+	/**
+	 * Einzelzeichen des Strings werden in Dezimalzahlen umgewandelt umd mit dem
+	 * Schlüssel subtrahiert um die Entschlüsselung zu erreichen. Sollte das
+	 * Zeichen dadurch das Großbuchstaben-Alphabet unterschreiten wird es mit
+	 * reset verrechnet um zum Ende des Alphabets geleitet. Zahlen werden wieder
+	 * in Zeichen umgewandelt, als einzelne Arrays gespeichert und zu einem
+	 * neuen String zusammengefügt. Dieser String wird zurückgegeben.
+	 * 
+	 * @param verschluesselRueckgabe
+	 * @return entschluesselRueckgabe
+	 */
+
+	public String entschluesseln(String verschluesselRueckgabe) {
+
+		char buchstabe;
+		char[] buchstabeArray;
+		buchstabeArray = new char[verschluesselRueckgabe.length()];
+
+		for (int zaehler = 0; zaehler < verschluesselRueckgabe.length(); zaehler++) {
+
+			int zwischenschritt = verschluesselRueckgabe.charAt(zaehler);
+
+			zwischenschritt -= schluessel;
+
+			if (zwischenschritt < untergrenze) {
+				zwischenschritt += reset;
+			}
+
+			// buchstabe - typecast von int Zwischenschritt
+			buchstabe = (char) zwischenschritt;
+			// einzelne Buchstaben werden gespeichert -> array
+			buchstabeArray[zaehler] = buchstabe;
+
+		}
+
+		String entschluesselRueckgabe = "";
+
+		for (int j = 0; j < buchstabeArray.length; j++) {
+
+			entschluesselRueckgabe = entschluesselRueckgabe + buchstabeArray[j];
+
+		}
+
+		System.out.println("Entschlüsselter Text: " + entschluesselRueckgabe);
+
+		return entschluesselRueckgabe;
+
+	}
+
+	public static void main(String[] args) {
+
+		Verschluesselung caesar = new Verschluesselung();
+
+		caesar.eingabe();
+		caesar.verarbeiteEingabe();
+		caesar.entschluesseln(caesar.verschluesseln());
+
+	}
+
+}

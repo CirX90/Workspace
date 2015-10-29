@@ -1,0 +1,89 @@
+/**
+ * Praktikum TI-PM Gruppe 2, SS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Milan Hering 	 (milan.hering@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 5, Aufgabe 4
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt5;
+
+public class StringVerarbeitung {
+	
+	Aufzaehlung aufzaehlung;
+	
+	public StringVerarbeitung(Aufzaehlung aufzaehlung) {
+		this.aufzaehlung = aufzaehlung;
+	}
+
+	/**
+	 * Deklaration der Variablen.
+	 */
+
+	private Verschluesselung caesar = new Verschluesselung();
+	private VokaleZaehlen vokale = new VokaleZaehlen();
+	private Palindrom palindrom = new Palindrom();
+	private String eingabe = "KUHLIEFUMDENTEICH";
+	
+	
+
+	/**
+	 * Getter und Setter Methode um die Eingabe speichern und wiedergeben zu
+	 * können.
+	 * 
+	 * @return
+	 */
+
+	public enum Aufzaehlung {
+		VERSCHLUESSELN, ENTSCHLUESSELN, PALINDROM, VOKALE
+
+	}
+	
+	/**
+	 * Mit einer Switch-Case Bedingung wird das eingegebene Kommando mit den
+	 * einzelnen Strings für die Methoden vergleichen. Bei Erfolg wird die
+	 * Methode aufgerufen, bei Nichterfolg wird nachgefragt und Eingabe neu
+	 * angeboten.
+	 */
+
+	public void verarbeitung() { 
+		
+			switch (aufzaehlung) {
+			case VERSCHLUESSELN:
+				caesar.setEingabe(eingabe);
+				caesar.verarbeiteEingabe();
+				caesar.verschluesseln();
+			case ENTSCHLUESSELN:
+				caesar.setEingabe(eingabe);
+				caesar.verarbeiteEingabe();
+				caesar.entschluesseln(eingabe);
+			case PALINDROM:
+				palindrom.setEingabe(eingabe);
+				palindrom.filterStrings();
+				palindrom.check();
+				palindrom.verarbeite();
+				palindrom.ausgabe();
+			case VOKALE:
+				vokale.setEingabe(eingabe);
+				vokale.filterGross();
+				vokale.filterKlein();
+				vokale.ausgabe();
+
+			}
+
+		}
+
+	public static void main(String[] args) {
+
+	StringVerarbeitung verschluesseln = new StringVerarbeitung(Aufzaehlung.VERSCHLUESSELN);
+	verschluesseln.verarbeitung();
+	StringVerarbeitung entschluesseln = new StringVerarbeitung(Aufzaehlung.ENTSCHLUESSELN);
+	entschluesseln.verarbeitung();
+	StringVerarbeitung palindrom = new StringVerarbeitung(Aufzaehlung.PALINDROM);
+	palindrom.verarbeitung();
+	StringVerarbeitung vokale = new StringVerarbeitung(Aufzaehlung.VOKALE);
+	vokale.verarbeitung();
+
+	}
+
+}

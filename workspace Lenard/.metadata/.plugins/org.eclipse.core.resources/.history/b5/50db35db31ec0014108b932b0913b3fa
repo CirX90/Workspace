@@ -1,0 +1,15 @@
+package grundlagen;
+
+import java.util.Scanner;
+
+public class Sandbox {
+	public static void main(String[] args) {
+
+		int ergebnis = 10%2;
+		
+		
+		System.out.println(ergebnis);
+		
+		
+	}
+}

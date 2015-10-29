@@ -1,0 +1,21 @@
+command=C\:\\Program Files\\Java\\jdk1.8.0_40\\bin\\javadoc.exe
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.mylyn.java.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="grundlagen.Playground"><rhs name\="grundlagen.Playground"/></lhs><lhs name\="aufgabenblatt5.VokaleZaehlen"><rhs name\="aufgabenblatt5.VokaleZaehlen"/></lhs><lhs name\="aufgabenblatt5.Palindrom"><rhs name\="aufgabenblatt5.Palindrom"/></lhs><lhs name\="aufgabenblatt5.Verschluesselung"><rhs name\="aufgabenblatt5.Verschluesselung"/></lhs><lhs name\="aufgabenblatt6.BewegungsVerhaltensArten"><rhs name\="aufgabenblatt6.BewegungsVerhalten"/></lhs><lhs name\="aufgabenblatt6.UmgebungsWahrnehmungsVerhaltenArten"><rhs name\="aufgabenblatt6.UmgebungsWahrnehmungsVerhalten"/></lhs><lhs name\="aufgabenblatt6_1.AutonomerRoboter"><rhs name\="aufgabenblatt6_1.AutonomerRoboter"/></lhs><lhs name\="aufgabenblatt6_1.IWahrnehmungsVerhalten"><rhs name\="aufgabenblatt6_1.UltraschallWahrnehmung"/><rhs name\="aufgabenblatt6_1.LaserScannerWahrnehmung"/></lhs><lhs name\="aufgabenblatt6_1.IBewegungsVerhalten"><rhs name\="aufgabenblatt6_1.AufRaedernRollen"/></lhs><lhs name\="aufgabenblatt5.StringVerarbeitung"><rhs name\="aufgabenblatt5.StringVerarbeitung"/></lhs><lhs name\="array.arrayVerlaengern"><rhs name\="array.arrayVerlaengern"/></lhs><lhs name\="DarthVader.SpielFigur"><rhs name\="DarthVader.DarthVader"/></lhs><lhs name\="DarthVader.DarthVader"><rhs name\="DarthVader.DarthVader"/></lhs><lhs name\="aufgabenblatt7.AbstrakteSpielSteuerung"><rhs name\="aufgabenblatt7.SpielSteuerung"/></lhs><lhs name\="aufgabenblatt7.SpielSteuerung"><rhs name\="aufgabenblatt7.SpielSteuerung"/></lhs><lhs name\="aufgabenblatt7.AbstraktesAsset"><rhs name\="aufgabenblatt7.Boesewicht"/></lhs><lhs name\="alteKlausurAuswerten.ILebewesen"><rhs name\="alteKlausurAuswerten.Schildkroete"/></lhs><lhs name\="alteKlausurAuswerten.Schildkroete"><rhs name\="alteKlausurAuswerten.Schildkroete"/></lhs><lhs name\="dasToString.DasToString"><rhs name\="dasToString.DasToString"/></lhs><lhs name\="vererbung.Superklasse"><rhs name\="vererbung.Vererbung"/></lhs><lhs name\="vererbung.Vererbung"><rhs name\="vererbung.Vererbung"/></lhs><lhs name\="Equals.Mensch"><rhs name\="Equals.Mensch"/></lhs><lhs name\="eachArray.Lebewesen"><rhs name\="eachArray.Lebewesen"/></lhs><lhs name\="grundlagen.Sandbox"><rhs name\="grundlagen.Sandbox"/></lhs><lhs name\="student.Studentenverzeichnis"><rhs name\="student.Studentenverzeichnis"/></lhs></history>
+content_assist_number_of_computers=19
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Consolas|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

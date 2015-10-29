@@ -1,0 +1,31 @@
+package aufgabenblatt4_2;
+
+public class Wagen {
+	
+	private final int wagenLaenge;
+	private final int kapazitaet;
+	
+	private Wagen naechsterWagen;
+	
+	public Wagen(int laenge, int kapazitaet) {
+		this.wagenLaenge = laenge;
+		this.kapazitaet = kapazitaet;
+	}
+	
+	public int getLaenge() {
+		return wagenLaenge;
+	}
+
+	public int getKapazitaet() {
+		return kapazitaet;
+	}
+
+	public Wagen getNaechsterWagen() {
+		return naechsterWagen;
+	}
+
+	public void setNaechsterWagen(Wagen naechsterWagen) {
+		this.naechsterWagen = naechsterWagen;
+	}
+
+}
