@@ -1,0 +1,23 @@
+package vorlesung5;
+
+import java.util.Scanner;
+
+public class Stopper extends Thread {
+	
+	int i = 0;
+	Scanner scanner = new Scanner(System.in);
+	
+	public void run() {
+		
+		while(!isInterrupted()) {
+			
+		}
+		
+	}
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
