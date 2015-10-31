@@ -1,0 +1,10 @@
+package aufgabenblatt1_1;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Student {
+
+	private List<Student> student = new LinkedList<Student>();
+
+}

@@ -1,63 +1,55 @@
 package aufgabenblatt1;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class Student implements Comparable<Student> {
-	
-	/**
-	 * Vorname des Studenten.
-	 */
+public class Student {
 
-	public String vorname = "";
+	/**
+	 * Die Liste der Studenten wird als Collection (List) verwaltet.
+	 **/
+
+	private List<StudentenEintrag> student = new LinkedList<StudentenEintrag>();
 	
 	/**
-	 * Nachname des Studenten.
-	 */
-	
-	public String nachname = "";
-	
-	/**
-	 * Matrikelnummer des Studenten.
-	 */
-	
-	public String matrikelnummer = "";
-	
-	/**
-	 * Liste mit Prüfungsleistungen.
-	 */
+	 * Die Liste der Pruefungsleistung wird als Collection (List) verwaltet.
+	 **/
 	
 	private List<Pruefungsleistung> leistung = new LinkedList<Pruefungsleistung>();
-	
+
 	/**
-	 * Konstruktor.
-	 * @param vorname
-	 * @param nachname
-	 * @param matrikelnummer
-	 */
-	
-	public Student(String vorname, String nachname, String matrikelnummer) {
-		this.nachname = nachname;
-		this.vorname = vorname;
-		this.matrikelnummer = matrikelnummer;
-		
-	}
-	
-	/**
-	 * Getter
-	 * @return matrikelnummer
-	 */
-	
-	public String getMatrikelnummer() {
-		return matrikelnummer;
-	}
-		
-	/**
-	 *  Methode zum Vergleichen von Matrikelnummern.
+	 * Es sollen Studenten und dazugehörige Namen und Martikelnummern in die
+	 * Liste eingetragen werden.
 	 */
 
-	@Override
-	public int compareTo(Student andereNummer) {
-		return getMatrikelnummer().compareTo(andereNummer.getMatrikelnummer());
+	public void eintragHinzufuegen(int martikelnummer, String nachname,
+			String vorname) {
+		student.add(new StudentenEintrag(martikelnummer, nachname, vorname));
+	}
+
+	public void sortieren() {
+		// Verwendung des Interfaces Comparable in StudentenEintrag
+		Collections.sort(student);
+
+		// Verwendung eines Komparators
+		//Collections.sort(student, new StudentenComparator());
 	}
 	
+	public void MatrikelnummerSortieren() {
+		
+		Collections.sort(student, new StudentenComparator());
+	}
+
+	@Override
+	public String toString() {
+		// Hinweis: Lösung mit Lambdas -> PM2, Idee: Einträge als Stream, jeden
+		// Eintrag in String konvertieren (map), Strings konkatenieren
+		// (collect).
+		return student.stream().map((StudentenEintrag eintrag) -> {
+			return eintrag.toString();
+		}).collect(Collectors.joining(", "));
+	}
+
 }

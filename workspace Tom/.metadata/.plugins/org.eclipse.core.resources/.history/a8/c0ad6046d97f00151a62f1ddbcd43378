@@ -1,0 +1,32 @@
+package aufgabenblatt1_1;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Student {
+
+	/**
+	 * Die Liste der Studenten wird als Collection (List) verwaltet.
+	 **/
+
+	private List<StudentenEintrag> student = new LinkedList<StudentenEintrag>();
+
+	/**
+	 * Es sollen Telefonnummern und dazugehörige Namen in die Liste eingetragen
+	 * bzw. verändert werden.
+	 */
+
+	public void eintragHinzufuegen(String vorname, String nachname, int nummer) {
+		student.add(new StudentenEintrag(vorname, nachname, nummer));
+	}
+
+	public void sortieren() {
+		// Verwendung des Interfaces Comparable in TelefonlistenEintrag
+		Collections.sort(student);
+
+		// Verwendung eines Komparators
+		Collections.sort(student, new StudentenComparator());
+	}
+
+}

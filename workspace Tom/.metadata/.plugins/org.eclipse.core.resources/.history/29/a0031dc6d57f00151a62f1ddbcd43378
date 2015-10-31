@@ -1,0 +1,79 @@
+package aufgabenblatt1;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class Student implements Comparable<Student> {
+
+	/**
+	 * Vorname des Studenten.
+	 */
+
+	public String vorname = "";
+
+	/**
+	 * Nachname des Studenten.
+	 */
+
+	public String nachname = "";
+
+	/**
+	 * Matrikelnummer des Studenten.
+	 */
+
+	public int matrikelnummer;
+
+	/**
+	 * Liste mit Prüfungsleistungen. Konstruktor erwartet Eingabe von Modulname
+	 * und Note
+	 */
+
+	private List<Pruefungsleistung> leistung = new LinkedList<Pruefungsleistung>();
+	private List<Student> student = new LinkedList<Student>();
+
+	/**
+	 * Konstruktor.
+	 * 
+	 * @param vorname
+	 * @param nachname
+	 * @param matrikelnummer
+	 */
+
+	public Student(String vorname, String nachname, int matrikelnummer) {
+		this.nachname = nachname;
+		this.vorname = vorname;
+		this.matrikelnummer = matrikelnummer;
+
+	}
+
+	public void studentHinzufuegen(String vorname, String nachname,
+			int matrikelnummer) {
+		student.add(new Student(vorname, nachname, matrikelnummer));
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return matrikelnummer
+	 */
+
+	public int getMatrikelnummer() {
+		return matrikelnummer;
+	}
+
+	/**
+	 * Es sollen Telefonnummern und dazugehörige Namen in die Liste eingetragen
+	 * bzw. verändert werden.
+	 */
+
+	@Override
+	public int compareTo(Student arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/**
+	 * Methode zum Vergleichen von Matrikelnummern.
+	 */
+
+}

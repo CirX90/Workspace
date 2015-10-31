@@ -1,0 +1,19 @@
+package aufgabenblatt1_1;
+
+public class StudentenAnwendung {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("---");
+	    Student student = new Student();
+	    student.eintragHinzufuegen("scholl", "mehmet", 666666);
+	    student.eintragHinzufuegen("Häßler", "Ikke", 777777);
+	    student.eintragHinzufuegen("Zidane", "Zizu", 111111);
+	    student.eintragHinzufuegen("Lahm", "Philipp", 222222);
+	    
+	    System.out.println(student);
+	    student.sortieren();
+	    System.out.println(student);
+	}
+
+}

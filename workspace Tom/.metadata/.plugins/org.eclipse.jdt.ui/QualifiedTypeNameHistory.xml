@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="aufgabenblatt6.AutonomerRoboter"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="aufgabenblatt6.BewegungsVerhalten"/>
 <fullyQualifiedTypeName name="aufgabenblatt6_1.Bewegen"/>
@@ -39,11 +38,9 @@
 <fullyQualifiedTypeName name="dasToString.DasToString"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="alteKlausurAuswerten.Schildkroete"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
 <fullyQualifiedTypeName name="vererbung.Vererbung"/>
 <fullyQualifiedTypeName name="Equals.Mensch"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="eachArray.Lebewesen"/>
 <fullyQualifiedTypeName name="grundlagen.Sandbox"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -55,4 +52,12 @@
 <fullyQualifiedTypeName name="aufgabenblatt1.Pruefungsleistung"/>
 <fullyQualifiedTypeName name="vorlesung5.ParalleleEingabe"/>
 <fullyQualifiedTypeName name="vorlesung5.ThreadSchlafen"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+<fullyQualifiedTypeName name="aufgabenblatt1_1.StudentenEintrag"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="aufgabe1_4.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,71 @@
+package aufgabenblatt1;
+
+public class Student implements Comparable<Student> {
+
+	/**
+	 * Vorname des Studenten.
+	 */
+
+	public String vorname = "";
+
+	/**
+	 * Nachname des Studenten.
+	 */
+
+	public String nachname = "";
+
+	/**
+	 * Matrikelnummer des Studenten.
+	 */
+
+	public int matrikelnummer;
+
+	/**
+	 * Liste mit Prüfungsleistungen.
+	 * Konstruktor erwartet Eingabe von Modulname und Note
+	 */
+
+	public Pruefungsleistung leistung = new Pruefungsleistung("", 3);
+
+	/**
+	 * Konstruktor.
+	 * 
+	 * @param vorname
+	 * @param nachname
+	 * @param matrikelnummer
+	 */
+
+	public Student(String vorname, String nachname, int matrikelnummer) {
+		this.nachname = nachname;
+		this.vorname = vorname;
+		this.matrikelnummer = matrikelnummer;
+
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return matrikelnummer
+	 */
+
+	public int getMatrikelnummer() {
+		return matrikelnummer;
+	}
+
+	/**
+	 * Es sollen Telefonnummern und dazugehörige Namen in die Liste eingetragen
+	 * bzw. verändert werden.
+	 */
+
+	@Override
+	public int compareTo(Student arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/**
+	 * Methode zum Vergleichen von Matrikelnummern.
+	 */
+
+
+}

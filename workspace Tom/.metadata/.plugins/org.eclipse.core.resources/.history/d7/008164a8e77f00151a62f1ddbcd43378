@@ -1,0 +1,14 @@
+package aufgabenblatt1_1;
+
+import java.util.Comparator;
+
+import aufgabenblatt1_1.StudentenEintrag;
+
+public class StudentenComparator implements Comparator<StudentenEintrag> {
+
+	@Override
+	public int compare(StudentenEintrag eintrag1, StudentenEintrag eintrag2) {
+		    return eintrag1.compareTo(eintrag1);
+	}
+
+}

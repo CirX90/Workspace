@@ -1,8 +1,0 @@
-package aufgabenblatt1;
-
-public class Student {
-	
-	public String vorname = "";
-	
-	
-}
