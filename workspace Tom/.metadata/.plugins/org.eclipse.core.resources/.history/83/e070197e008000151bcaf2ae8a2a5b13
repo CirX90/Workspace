@@ -28,27 +28,18 @@ public class Student {
 			String vorname) {
 		student.add(new StudentenEintrag(martikelnummer, nachname, vorname));
 	}
-	
-	public void leistungHinzufuegen(String modulname, int note) {
-		leistung.add(new Pruefungsleistung(modulname, note));
-	}
 
-	public void sortierenMatrikelnummer() {
+	public void sortieren() {
 		// Verwendung des Interfaces Comparable in StudentenEintrag
 		Collections.sort(student);
 
+		// Verwendung eines Komparators
+		//Collections.sort(student, new StudentenComparator());
 	}
 	
-	public void sortierenNachname() {
-
-		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorNachname());
-	}
-	
-	public void sortierenVorname() {
-
-		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorVorname());
+	public void MatrikelnummerSortieren() {
+		
+		Collections.sort(student, new StudentenComparator());
 	}
 
 	@Override

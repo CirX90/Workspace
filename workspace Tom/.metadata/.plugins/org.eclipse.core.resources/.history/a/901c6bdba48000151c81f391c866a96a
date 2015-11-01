@@ -31,9 +31,8 @@ public class StudentenEintrag implements Comparable<StudentenEintrag> {
 
 	@Override
 	public int compareTo(StudentenEintrag andererEintrag) {
-
-		return getMatrikelnummer()
-				.compareTo(andererEintrag.getMatrikelnummer());
+		
+		return getMatrikelnummer().compareTo(andererEintrag.getMatrikelnummer());
 	}
 
 	@Override

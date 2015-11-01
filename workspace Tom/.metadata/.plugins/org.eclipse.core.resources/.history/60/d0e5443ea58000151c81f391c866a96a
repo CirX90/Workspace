@@ -37,18 +37,16 @@ public class Student {
 		// Verwendung des Interfaces Comparable in StudentenEintrag
 		Collections.sort(student);
 
+		// Verwendung eines Komparators
+		Collections.sort(student, new StudentenComparator());
 	}
 	
 	public void sortierenNachname() {
+		// Verwendung des Interfaces Comparable in StudentenEintrag
+		Collections.sort(student);
 
 		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorNachname());
-	}
-	
-	public void sortierenVorname() {
-
-		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorVorname());
+		Collections.sort(student, new StudentenComparator());
 	}
 
 	@Override

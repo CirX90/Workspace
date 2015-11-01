@@ -11,7 +11,6 @@ public class StudentenAnwendung {
 	    
 	    System.out.println("--------------------------------------------");
 	    System.out.println(student);
-	    System.out.println("--------------------------------------------");
 	    student.sortierenMatrikelnummer();
 	    System.out.println("Sortiert nach Matrikelnummer:");
 	    System.out.println(student);

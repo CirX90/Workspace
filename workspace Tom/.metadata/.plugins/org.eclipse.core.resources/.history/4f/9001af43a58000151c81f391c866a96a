@@ -42,13 +42,7 @@ public class Student {
 	public void sortierenNachname() {
 
 		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorNachname());
-	}
-	
-	public void sortierenVorname() {
-
-		// Verwendung eines Komparators
-		Collections.sort(student, new StudentenComparatorVorname());
+		Collections.sort(student, new StudentenComparator());
 	}
 
 	@Override

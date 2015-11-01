@@ -4,6 +4,7 @@ public class StudentenAnwendung {
 	
 	public static void main(String[] args) {
 		
+		System.out.println("--------------------------------------------");
 	    Student student = new Student();
 	    student.eintragHinzufuegen(222222, "Lahm", "Philipp");
 	    student.eintragHinzufuegen(111111, "Zidane", "Zizu");
@@ -11,7 +12,6 @@ public class StudentenAnwendung {
 	    
 	    System.out.println("--------------------------------------------");
 	    System.out.println(student);
-	    System.out.println("--------------------------------------------");
 	    student.sortierenMatrikelnummer();
 	    System.out.println("Sortiert nach Matrikelnummer:");
 	    System.out.println(student);
