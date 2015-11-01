@@ -1,31 +1,10 @@
 package aufgabenblatt1;
 
 public class StudentenEintrag implements Comparable<StudentenEintrag> {
-	
-	/**
-	 * Deklaration einer Variable für den String eines Vornamens von Studenten.
-	 */
 
 	private String vorname = "";
-	
-	/**
-	 * Deklaration einer Variable für den String eines Nachnamen von Studenten.
-	 */
-	
 	private String nachname = "";
-	
-	/**
-	 * Deklaration eine Variable int einer Matrikelnummer von Studenten.
-	 */
-	
 	private int matrikelnummer;
-	
-	/**
-	 * Konstruktor.
-	 * @param matrikelnummer
-	 * @param nachname
-	 * @param vorname
-	 */
 
 	public StudentenEintrag(int matrikelnummer, String nachname, String vorname) {
 		this.matrikelnummer = matrikelnummer;
@@ -73,7 +52,7 @@ public class StudentenEintrag implements Comparable<StudentenEintrag> {
 	}
 	
 	/**
-	 * Methode zum Formatieren der Ausgabe.
+	 * 
 	 */
 
 	@Override

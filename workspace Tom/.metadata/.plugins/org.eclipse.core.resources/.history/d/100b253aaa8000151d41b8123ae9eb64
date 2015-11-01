@@ -2,9 +2,10 @@
  * Praktikum TI-PM2, WS 2015
  * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
  * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
- * Aufgabe: Aufgabenblatt 1, Aufgabe 1.2
+ * Aufgabe: Aufgabenblatt 1, Aufgabe 1
  * Verwendete Quellen: Vorlesungsfolien
  */
+
 
 package aufgabenblatt1;
 
@@ -20,71 +21,54 @@ public class Student {
 	 **/
 
 	private List<StudentenEintrag> student = new LinkedList<StudentenEintrag>();
-
+	
 	/**
 	 * Die Liste der Pruefungsleistung wird als Collection (List) verwaltet.
 	 **/
-
+	
 	private List<Pruefungsleistung> leistung = new LinkedList<Pruefungsleistung>();
 
 	/**
-	 * Es werden Studenten und dazugehörige Namen und Martikelnummern in die
-	 * Liste eingetragen.
+	 * Es sollen Studenten und dazugehörige Namen und Martikelnummern in die
+	 * Liste eingetragen werden.
 	 */
 
 	public void eintragHinzufuegen(int martikelnummer, String nachname,
 			String vorname) {
 		student.add(new StudentenEintrag(martikelnummer, nachname, vorname));
 	}
-
-	/**
-	 * Es werden Prüfungsleistungen und dazugehörige Modulnamen und Noten in die
-	 * Liste eingetragen.
-	 */
-
+	
 	public void leistungHinzufuegen(String modulname, int note) {
 		leistung.add(new Pruefungsleistung(modulname, note));
 	}
 
-	/**
-	 * Methode zum Sortieren der Studenten nach Matrikelnummern.
-	 */
-
 	public void sortierenMatrikelnummer() {
-		
 		// Verwendung des Interfaces Comparable in StudentenEintrag
 		Collections.sort(student);
 
 	}
-
-	/**
-	 * Methode zum Sortieren der Studenten nach Nachname.
-	 */
-
+	
 	public void sortierenNachname() {
 
 		// Verwendung eines Komparators
 		Collections.sort(student, new StudentenComparatorNachname());
 	}
-
-	/**
-	 * Methode zum Sortieren der Studenten nach Vorname.
-	 */
-
+	
 	public void sortierenVorname() {
 
 		// Verwendung eines Komparators
 		Collections.sort(student, new StudentenComparatorVorname());
 	}
-
+	
 	/**
 	 * Methode zum Formatieren der Ausgabe.
 	 */
 
 	@Override
 	public String toString() {
-
-		// Strings konkatenieren (collect).
+		// Hinweis: Lösung mit Lambdas -> PM2, Idee: Einträge als Stream, jeden
+		// Eintrag in String konvertieren (map), Strings konkatenieren
+		// (collect).
 		return student.stream().map((StudentenEintrag eintrag) -> {
 			return eintrag.toString();
 		}).collect(Collectors.joining(", "));

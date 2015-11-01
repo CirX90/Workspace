@@ -2,7 +2,22 @@ package aufgabenblatt1;
 
 import java.util.Comparator;
 
-public class StudentenComparatorNachname implements Comparator<StudentenEintrag> {
+/**
+ * Comparator Klasse, dient der Vergleichsmöglichkeit der Studenten nach
+ * Nachnamen über das implementierte Interface Comparator.
+ * 
+ * @author Tom Hertel
+ *
+ */
+
+public class StudentenComparatorNachname implements
+		Comparator<StudentenEintrag> {
+
+	/**
+	 * Implementierte compare Methode zum Vergleichen nach Nachname. Sollte
+	 * dieser gleich sein werden die Einträge nach Vorname sortiert und
+	 * zurückgegeben.
+	 */
 
 	@Override
 	public int compare(StudentenEintrag student1, StudentenEintrag student2) {

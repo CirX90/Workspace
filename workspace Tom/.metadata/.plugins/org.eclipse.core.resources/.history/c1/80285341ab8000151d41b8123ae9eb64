@@ -1,19 +1,6 @@
 package aufgabenblatt1;
 
-/**
- * Klasse zur Steuerung der Anwendung.
- * @author Tom Hertel
- *
- */
-
 public class StudentenAnwendung {
-	
-	/**
-	 * Eintraege hinzugefuegt, mit Methoden sortiert und ausgegeben.
-	 * @param args
-	 */
-	
-	public static void main(String[] args) {
 		
 	    Student student = new Student();
 	    student.eintragHinzufuegen(222222, "Lahm", "Philipp");

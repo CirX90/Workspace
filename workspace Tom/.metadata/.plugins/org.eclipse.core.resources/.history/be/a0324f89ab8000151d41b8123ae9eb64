@@ -14,8 +14,7 @@ public class StudentenComparatorVorname implements Comparator<StudentenEintrag> 
 
 	/**
 	 * Implementierte compare Methode zum Vergleichen nach Nachname. Sollte
-	 * dieser gleich sein werden die Einträge nach Vorname sortiert und
-	 * zurückgegeben.
+	 * dieser gleich sein werden die Einträge nach Vorname sortiert.
 	 */
 
 	@Override

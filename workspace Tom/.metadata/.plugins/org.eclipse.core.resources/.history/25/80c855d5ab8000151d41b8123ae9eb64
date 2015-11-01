@@ -51,7 +51,6 @@ public class Student {
 	 */
 
 	public void sortierenMatrikelnummer() {
-		
 		// Verwendung des Interfaces Comparable in StudentenEintrag
 		Collections.sort(student);
 
@@ -83,8 +82,9 @@ public class Student {
 
 	@Override
 	public String toString() {
-
-		// Strings konkatenieren (collect).
+		// Hinweis: Lösung mit Lambdas -> PM2, Idee: Einträge als Stream, jeden
+		// Eintrag in String konvertieren (map), Strings konkatenieren
+		// (collect).
 		return student.stream().map((StudentenEintrag eintrag) -> {
 			return eintrag.toString();
 		}).collect(Collectors.joining(", "));
