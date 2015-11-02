@@ -1,0 +1,35 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class StudentTestNachname {
+
+	@Test
+	public void testeSortierungNachnamen() {
+		Student eintrag = new Student();
+		eintrag.eintragHinzufuegen(11111, "Mehmet", "Scholl");
+		eintrag.eintragHinzufuegen(22222, "Lahm", "Philipp");
+		eintrag.eintragHinzufuegen(33333, "Zizu", "Zidane");
+		eintrag.sortierenNachname();
+
+		final String sortiert = "Philipp Lahm 22222 |,Scholl Mehmet 11111 |,Zidane Zizu 33333 |";
+
+		assertEquals(eintrag.toString(), sortiert);
+
+	}
+	
+	@Test
+	public void testeSortierungNachnamen2() {
+		Student eintrag1 = new Student();
+		eintrag1.eintragHinzufuegen(11111, "Mehmet", "Scholl");
+		eintrag1.eintragHinzufuegen(22222, "Lahm", "Philipp");
+		eintrag1.eintragHinzufuegen(33333, "Zizu", "Zidane");
+		eintrag1.sortierenNachname();
+
+		final String sortiert = "Philipp Lahm 22222 |,Scholl Mehmet 11111 |,Zidane Zizu 33333 |";
+
+		assertEquals(eintrag1.toString(), sortiert);
+
+}

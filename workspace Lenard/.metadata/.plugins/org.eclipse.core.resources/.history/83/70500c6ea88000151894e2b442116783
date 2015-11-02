@@ -1,0 +1,28 @@
+package aufgabenblatt1;
+
+public class StudentenAnwendung {
+
+	public static void main(String[] args) {
+		testeEintrag();
+	}
+
+	public static void testeEintrag() {
+		System.out.println("---");
+		System.out.println("Nach Nummer:");
+		Student eintrag = new Student();
+		eintrag.eintragHinzufuegen(333333, "Mehmet", "Scholl");
+		eintrag.eintragHinzufuegen(111111, "Häßler", "Ikke");
+		eintrag.eintragHinzufuegen(222222, "Zidane", "Zizu");
+
+		System.out.println(eintrag);
+		eintrag.sortierenNachname();
+		System.out.println(eintrag);
+
+		
+		System.out.println(eintrag);
+		eintrag.sortierenVorname();
+		System.out.println(eintrag);
+
+	}
+
+}

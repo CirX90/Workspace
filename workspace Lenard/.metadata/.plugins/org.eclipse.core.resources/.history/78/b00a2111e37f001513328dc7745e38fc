@@ -1,0 +1,34 @@
+package test;
+
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+
+public class Student {
+
+	 private List<StudentenEintrag> eintrag =
+		      new LinkedList<StudentenEintrag>();
+
+		  public void eintragHinzufuegen(String name, int nummer) {
+		    eintrag.add(new StudentenEintrag(name, nummer));
+		  }
+
+		  public int getNummer(int nummer) {
+		    for (StudentenEintrag eintrag : eintrag) {
+		      if (eintrag.getName().equals(nummer)) {
+		        return eintrag.getNummer();
+		      }
+		    }
+			return nummer;	 
+		  }
+		    
+		  public void sortieren() {
+			   Collections.sort(eintrag);
+		   }
+
+		public int compareTo(Student andereEintrag) {
+			return 0;
+		}
+}

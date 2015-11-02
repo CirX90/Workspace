@@ -1,0 +1,16 @@
+package aufgabenblatt1;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class StudentenEintragComparator implements Comparator<StudentenEintrag> {
+
+	@Override
+	public int compare(StudentenEintrag getNachname,
+			StudentenEintrag andereNachname) {
+		return getNachname.compareTo(andereNachname);
+	}
+
+}

@@ -1,0 +1,32 @@
+package test;
+
+public class Student implements Comparable<StudentEintrag>{
+
+	  private final String name;
+	  
+	  private final String nummer;
+
+	@Override
+	public int compareTo(StudentEintrag student2) {
+		return getName().compareTo(student2.getName());
+		
+	}
+	
+	public Student(String name, String nummer) {
+		this.name = name;
+		this.nummer = nummer;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	
+	public String getNummer(){
+		return nummer;
+	}
+	  
+	@Override
+	public String toString(){
+		return String.format("%s: %s",getName(), getNummer());
+	}
+}

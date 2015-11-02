@@ -1,0 +1,50 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class StudentTestNachname {
+
+	@Test
+	public void testeSortierungNachnamen() {
+		Student eintrag1 = new Student();
+		eintrag1.eintragHinzufuegen(11111, "Mehmet", "Scholl");
+		eintrag1.eintragHinzufuegen(22222, "Lahm", "Philipp");
+		eintrag1.eintragHinzufuegen(33333, "Zizu", "Zidane");
+		eintrag1.sortierenNachname();
+
+		final String sortiert = "Philipp Lahm 22222 |,Scholl Mehmet 11111 |,Zidane Zizu 33333 |";
+
+		assertEquals(eintrag1.toString(), sortiert);
+
+	}
+	
+	@Test
+	public void testeSortierungNachnamen2() {
+		Student eintrag2 = new Student();
+		eintrag2.eintragHinzufuegen(11111, "Zwanziger", "Theo");
+		eintrag2.eintragHinzufuegen(22222, "Elber", "Giovane");
+		eintrag2.eintragHinzufuegen(33333, "Alaba", "David");
+		eintrag2.sortierenNachname();
+
+		final String sortiert = "David Alaba 33333 |,Giovane Elber 22222 |,Theo Zwanziger 11111 |";
+
+		assertEquals(eintrag1.toString(), sortiert);
+
+	}
+	
+	@Test
+	public void testeSortierungNachnamen3() {
+		Student eintrag3 = new Student();
+		eintrag3.eintragHinzufuegen(11111, "Beckham", "David");
+		eintrag3.eintragHinzufuegen(22222, "Beckham", "Brooklyn");
+		eintrag3.eintragHinzufuegen(33333, "Beckham", "Romeo");
+		eintrag3.sortierenNachname();
+
+		final String sortiert = "Brooklyn Beckham 22222 |,David Beckham 11111 |,Romeo Beckham 33333 |";
+
+		assertEquals(eintrag3.toString(), sortiert);
+
+	}
+}

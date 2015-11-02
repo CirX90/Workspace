@@ -1,0 +1,22 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class StudentTestNachname {
+
+	@Test
+	public void testeSortierungNachnamen() {
+		Student eintrag = new Student();
+		eintrag.eintragHinzufuegen(11111, "Mehmet", "Scholl");
+		eintrag.eintragHinzufuegen(22222, "H‰ﬂler", "Ikke");
+		eintrag.eintragHinzufuegen(33333, "Zidane", "Zizu");
+		eintrag.sortierenNachname();
+
+		final String sortiert = "Zizu Zidane 33333 |,Scholl Mehmet 11111 |,Ikke H‰ﬂler 22222 |";
+
+		assertEquals(eintrag.toString(), sortiert);
+
+	}
+}

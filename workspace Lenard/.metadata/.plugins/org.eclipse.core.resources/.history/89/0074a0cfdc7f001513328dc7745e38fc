@@ -1,0 +1,37 @@
+package test;
+
+public class StudentenAnwendung {
+
+	  public static void main(String[] args) {
+		    testeTelefonliste();
+		  }
+
+		  /**
+		   * Test mit einer Telefonliste.
+		   */
+		  public static void testeTelefonliste() {
+		    System.out.println("---");
+		    Student telefonliste = new Student();
+		    String scholl = "Mehmet Scholl";
+		    String zizu = "Zizu Zidane";
+		    String ikke = "Ikke H‰ﬂler";
+		    telefonliste.eintragHinzufuegen(scholl, "1121718");
+		    telefonliste.eintragHinzufuegen(ikke, "736712027");
+		    telefonliste.eintragHinzufuegen(zizu, "674237423");
+
+		    // System.out.format("Nummer von %s: %s\n", scholl,
+		    // telefonliste.getNummer(scholl));
+		    // System.out.format("Nummer von %s: %s\n", zizu,
+		    // telefonliste.getNummer(zizu));
+		    // System.out.println(telefonliste);
+		    // telefonliste.eintragEntfernen(ikke);
+		    // System.out.println(telefonliste);
+		    // telefonliste.eintragEntfernen(scholl);
+
+		    System.out.println(telefonliste);
+		    telefonliste.sortieren();
+		    System.out.println(telefonliste);
+		  }
+
+
+}

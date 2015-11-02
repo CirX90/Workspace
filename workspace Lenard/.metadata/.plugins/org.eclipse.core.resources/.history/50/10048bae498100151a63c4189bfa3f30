@@ -1,0 +1,14 @@
+package aufgabenblatt1;
+
+
+public class IntCheck {
+
+	public static <T> boolean check(ArrayListe<T> elemente) {
+		if (elemente.get(0)instanceof Integer) {
+			return true;
+		}	else {
+			return false;
+		}
+	}
+	
+}

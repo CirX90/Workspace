@@ -1,0 +1,12 @@
+package test;
+
+import java.util.Comparator;
+
+public class StudentenEintragComparator implements Comparator {
+
+	@Override
+	public int compare(StudentenEintrag student, StudentenEintrag andererEintrag) {
+		return 0;
+	}
+
+}
