@@ -1,0 +1,43 @@
+package aufgabenblatt1;
+
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+public class Student {
+
+	 private List<StudentenEintrag> student =
+		      new LinkedList<StudentenEintrag>();
+
+		  public void eintragHinzufuegen(String vorname, String nachname, int nummer) {
+			  student.add(new StudentenEintrag(vorname, nachname, nummer));
+		  }
+
+		  public int getNummer(int nummer) {
+		    for (StudentenEintrag eintrag : student) {
+		      if (eintrag.getNummer()==(nummer)) {
+		        return eintrag.getNummer();
+		      }
+		    }
+			return nummer;	 
+		  }
+		    
+		  public void sortieren() {
+			   Collections.sort(student);
+		   }
+		  
+		  @Override
+		  public String toString() {
+		    // Hinweis: Lösung mit Lambdas -> PM2, Idee: Einträge als Stream, jeden
+		    // Eintrag in String konvertieren (map), Strings konkatenieren (collect).
+		    return student.stream()
+		        .map((StudentenEintrag eintrag) -> {
+		          return eintrag.toString();
+		        }).collect(Collectors.joining(", "));
+		    
+		  }
+		  
+}

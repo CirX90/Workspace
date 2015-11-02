@@ -1,0 +1,66 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StudentTest {
+
+	@Test
+	public void testeSortierungMatrikelnummer() {
+		
+		Student eintrag = new Student();
+		eintrag.eintragHinzufuegen(333333, "Mehmet", "Scholl");
+		eintrag.eintragHinzufuegen(111111, "H‰ﬂler", "Ikke");
+		eintrag.eintragHinzufuegen(222222, "Zidane", "Zizu");
+		eintrag.sortierenNachname();
+		
+		final String sortiert = "Ikke H‰ﬂler 111111 |,Zizu Zidane 222222 |,Scholl Mehmet 333333 |";
+		
+		assertEquals(eintrag.toString() ,sortiert);
+		
+		
+	}
+	
+	@Test
+	public void testeSortierungMatrikelnummer2() {
+	Student eintrag2 = new Student();
+	eintrag2.eintragHinzufuegen(2345123, "Mehmet", "Scholl");
+	eintrag2.eintragHinzufuegen(1231443, "H‰ﬂler", "Ikke");
+	eintrag2.eintragHinzufuegen(8576677, "Zidane", "Zizu");
+	eintrag2.sortierenNachname();
+	
+	final String sortiert = "Ikke H‰ﬂler 1231443 |,Scholl Mehmet 2345123 |,Zizu Zidane 8576677 |";
+	
+	assertEquals(eintrag2.toString() ,sortiert);
+	
+	}
+	
+	@Test
+	public void testeSortierungMatrikelnummer3() {
+	Student eintrag3 = new Student();
+	eintrag3.eintragHinzufuegen(111111, "Mehmet", "Scholl");
+	eintrag3.eintragHinzufuegen(555555, "H‰ﬂler", "Ikke");
+	eintrag3.eintragHinzufuegen(999999, "Zidane", "Zizu");
+	eintrag3.sortierenNachname();
+	
+	final String sortiert = "Scholl Mehmet 111111 |,Ikke H‰ﬂler 555555 |,Zizu Zidane 999999 |";
+	
+	assertEquals(eintrag3.toString() ,sortiert);
+	
+	}
+	
+	@Test
+	public void testeSortierungMatrikelnummer4() {
+	Student eintrag4 = new Student();
+	eintrag4.eintragHinzufuegen("Scholl", "Mehmet", 12345);
+	eintrag4.eintragHinzufuegen("Ikke", "H‰ﬂler", 123456);
+	eintrag4.eintragHinzufuegen("Zizu", "Zidane", 1234);
+	eintrag4.sortierenNachname();
+	
+	final String sortiert = "Zizu Zidane 1234 |,Scholl Mehmet 12345 |,Ikke H‰ﬂler 123456 |";
+	
+	assertEquals(eintrag4.toString() ,sortiert);
+	
+	}
+}

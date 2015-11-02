@@ -1,0 +1,37 @@
+package test;
+
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Student {
+
+	private List<StudentEintrag> eintrag = new LinkedList<StudentEintrag>();
+	
+	public void eintragHinzufuegen(String name, String nummer) {
+		eintrag.add(new StudentEintrag(name, nummer));
+	}
+	
+	  public String getNummer(String name) {
+		    // "Traditionelle" for-Schleife
+		    for (StudentEintrag eintrag : eintrag) {
+		      if (eintrag.getName().equals(name)) {
+		        return eintrag.getNummer();
+		      }
+		    }
+			return name;
+	  } 
+	  
+	  public void sortieren() {
+		    // Verwendung des Interfaces Comparable in TelefonlistenEintrag
+		    Collections.sort(eintrag);
+
+		    // Verwendung eines Komparators
+		    Collections.sort(eintrag,
+		        new StudentEintragComparator());
+		  }
+	
+}

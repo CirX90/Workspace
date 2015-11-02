@@ -1,0 +1,38 @@
+package aufgabenblatt1_4;
+
+public class ArrayList<T> {
+
+	final int anzahlElemente = 1;
+	private Object[] elements;
+
+	public ArrayList() {
+
+	}
+
+	public void hinzufuegen() {
+
+	}
+
+	// get(int)
+
+	public void entfernen() {
+
+	}
+
+	public void entferneElementAnIndex() {
+
+	}
+
+	public int getAnzahlElemente() {
+		return anzahlElemente;
+	}
+
+	public String toString() {
+		return null;
+	}
+
+	public void getKleinstesElement() {
+
+	}
+
+}

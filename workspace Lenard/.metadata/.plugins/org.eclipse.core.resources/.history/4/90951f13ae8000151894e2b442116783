@@ -1,0 +1,30 @@
+package aufgabenblatt1;
+
+public class StudentenAnwendung {
+
+	public static void main(String[] args) {
+	    Student student = new Student();
+	    student.eintragHinzufuegen(11111, "Beckham", "David");
+	    student.eintragHinzufuegen(22222, "Beckham", "Brooklyn");
+	    student.eintragHinzufuegen(33333, "Beckham", "Romeo");
+	    
+	    System.out.println("--------------------------------------------");
+	    System.out.println(student);
+	    System.out.println("--------------------------------------------");
+	    student.sortierenMatrikelnummer();
+	    System.out.println("Sortiert nach Matrikelnummer:");
+	    System.out.println(student);
+	    
+	    System.out.println("--------------------------------------------");
+	    student.sortierenNachname();
+	    System.out.println("Sortiert nach Nachname:");
+	    System.out.println(student);
+	    
+	    System.out.println("--------------------------------------------");
+	    student.sortierenVorname();
+	    System.out.println("Sortiert nach Vorname:");
+	    System.out.println(student);
+	}
+
+
+}

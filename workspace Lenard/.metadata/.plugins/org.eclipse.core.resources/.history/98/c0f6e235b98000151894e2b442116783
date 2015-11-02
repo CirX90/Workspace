@@ -1,0 +1,52 @@
+package aufgabenblatt1_4;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class ArrayList<T> {
+	
+	private List<ArrayList> liste = new LinkedList<ArrayList>();
+	
+	public int zahl;
+	
+	public String blablub = "";
+	
+	public ArrayList(int zahl, String blablub){
+		this.zahl = zahl;
+		this.blablub = blablub;
+	}
+
+	final int anzahlElemente = 1;
+	private Object[] elements;
+
+	public ArrayList() {
+
+	}
+
+	public void hinzufuegen(int zahl, String Blablub) {
+		liste.add(arg0)
+	}
+
+	// get(int)
+
+	public void entfernen() {
+
+	}
+
+	public void entferneElementAnIndex() {
+
+	}
+
+	public int getAnzahlElemente() {
+		return anzahlElemente;
+	}
+
+	public String toString() {
+		return null;
+	}
+
+	public void getKleinstesElement() {
+
+	}
+
+}

@@ -1,0 +1,24 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StudentTest {
+
+	@Test
+	public void testeSortierungMatrikelnummer() {
+		
+		Student eintrag = new Student();
+		eintrag.eintragHinzufuegen("Scholl", "Mehmet", 333333);
+		eintrag.eintragHinzufuegen("Ikke", "H‰ﬂler", 111111);
+		eintrag.eintragHinzufuegen("Zizu", "Zidane", 222222);
+		
+		String sortiert = "Ikke H‰ﬂler 111111 |,Zizu Zidane 222222 |,Scholl Mehmet 333333 |";
+		
+		assertEquals(student ,sortiert);
+		
+		
+	}
+
+}

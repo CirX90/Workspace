@@ -1,0 +1,24 @@
+package test;
+
+public class StudentenAnwendung {
+
+	public static void main(String[] args) {
+		testeEintrag();
+	}
+
+	public static void testeEintrag() {
+		System.out.println("---");
+		Student eintrag = new Student();
+		String scholl = "Mehmet Scholl";
+		String zizu = "Zizu Zidane";
+		String ikke = "Ikke H‰ﬂler";
+		eintrag.eintragHinzufuegen(scholl, "333333");
+		eintrag.eintragHinzufuegen(ikke, "111111");
+		eintrag.eintragHinzufuegen(zizu, "222222");
+
+		System.out.println(eintrag);
+		eintrag.sortieren();
+		System.out.println(eintrag);
+	}
+
+}

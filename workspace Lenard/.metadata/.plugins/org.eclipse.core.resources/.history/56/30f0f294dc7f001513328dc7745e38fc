@@ -1,0 +1,47 @@
+package test;
+
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Student {
+
+	 private List<StudentenEintrag> eintrag =
+		      new LinkedList<StudentenEintrag>();
+
+		  /**
+		   * Es sollen Telefonnummern und dazugehörige Namen in die Liste eingetragen
+		   * bzw. verändert werden.
+		   */
+		  public void eintragHinzufuegen(String name, String nummer) {
+		    eintrag.add(new StudentenEintrag(name, nummer));
+		  }
+
+		  /**
+		   * Es soll nach einem Namen gesucht werden. Ergebnis: Telefonnummer oder null,
+		   * falls nicht gefunden.
+		   */
+		  public String getNummer(String name) {
+		    // "Traditionelle" for-Schleife
+		    for (StudentenEintrag eintrag : eintrag) {
+		      if (eintrag.getName().equals(name)) {
+		        return eintrag.getNummer();
+		      }
+		    }
+			return name;
+		    }
+		    
+	   public void eintragEntfernen(String name) {
+		     for (Iterator<StudentenEintrag> it =
+		            eintrag.iterator(); it.hasNext();) {
+		    	 StudentenEintrag eintrag = it.next();
+		          if (eintrag.getName().equals(name)) {
+		            it.remove();
+		          }
+		        }
+	   }
+
+}
