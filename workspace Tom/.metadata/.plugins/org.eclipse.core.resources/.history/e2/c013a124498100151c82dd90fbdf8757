@@ -8,7 +8,6 @@ public class ArrayListIntTest {
 	
 	/**
 	 * Es wird getestet ob die erste Zahl in der Liste ein Integer Wert ist.
-	 * Erwarte true.
 	 */
 	
 	@Test
@@ -20,11 +19,6 @@ public class ArrayListIntTest {
 		assertEquals(true, check.pruefe(list));
 		
 	}
-	
-	/**
-	 * Es wird getestet ob die erste Zahl in der Liste ein Integer Wert ist.
-	 * Erwarte false.
-	 */
 	
 	@Test
 	public <T> void testeErsteZahlInt2() {
@@ -38,11 +32,6 @@ public class ArrayListIntTest {
 		
 	}
 	
-	/**
-	 * Es wird getestet ob die erste Zahl in der Liste ein Integer Wert ist.
-	 * Erwarte true.
-	 */
-	
 	@Test
 	public <T> void testeErsteZahlInt3() {
 		int element1 = 4;
@@ -55,6 +44,19 @@ public class ArrayListIntTest {
 		list.hinzufuegen(element3);
 		assertEquals(true, check.pruefe(list));
 		
+	}
+	
+	@Test
+	public <T> void testeSummenRechner() {
+		int element1 = 5;
+		int element2 = 4;
+		int element3 = 3;
+		ArrayList list = new ArrayList<T>(0);
+		IntCheck check = new IntCheck();
+		list.hinzufuegen(element1);
+		list.hinzufuegen(element2);
+		list.hinzufuegen(element3);
+		assertEquals(12, list.summenRechner());
 	}
 
 }

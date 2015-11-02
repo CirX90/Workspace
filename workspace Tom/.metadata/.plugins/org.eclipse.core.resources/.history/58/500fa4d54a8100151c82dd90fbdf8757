@@ -26,8 +26,7 @@ public class ArrayList<T> {
 	}
 
 	/**
-	 * Hinzufuegen von Elementen in die Liste. Dabei wird die Liste jeweils um
-	 * eine Stelle verlängert.
+	 * Hinzufuegen von Elementen in die Liste.
 	 * 
 	 * @param element
 	 */
@@ -62,7 +61,7 @@ public class ArrayList<T> {
 	}
 
 	/**
-	 * Gewünschtes Element aus der Liste entfernen.
+	 * Element aus der Liste entfernen
 	 * 
 	 * @param element
 	 *            welches entfernt werden soll
@@ -79,8 +78,7 @@ public class ArrayList<T> {
 	}
 
 	/**
-	 * Element an gewünschtem Index entfernen, falls Index ungültig ist wird die
-	 * Exception gefangen.
+	 * An bestimmten Index, das Element entfernen
 	 * 
 	 * @param index
 	 */
@@ -107,7 +105,8 @@ public class ArrayList<T> {
 	}
 
 	/**
-	 * Methode um die Ausgabe zu formatieren.
+	 * ToString Methode
+	 * 
 	 */
 
 	public String toString() {
@@ -168,6 +167,7 @@ public class ArrayList<T> {
 		int result = 0;
 
 		if (!(elemente[0] instanceof Integer)) {
+			// System.out.println("Ist kein Integer");
 			return 0;
 		}
 
