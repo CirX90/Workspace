@@ -1,8 +1,0 @@
-package aufgabenblatt4_2;
-
-public class Wagen {
-	
-	private final int laenge;
-	private final int kapazitaet;
-
-}

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;vorlesung7.Namenskollision&apos; to &apos;BeispielNamensKollision&apos;&#x0D;&#x0A;- Original project: &apos;Vorlesung&apos;&#x0D;&#x0A;- Original element: &apos;vorlesung7.Namenskollision&apos;&#x0D;&#x0A;- Renamed element: &apos;vorlesung7.BeispielNamensKollision&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Namenskollision&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;vorlesung7{Namenskollision.java[Namenskollision" matchStrategy="1" name="BeispielNamensKollision" qualified="false" references="true" similarDeclarations="false" stamp="1429942628930" textual="false" version="1.0"/>
-</session>

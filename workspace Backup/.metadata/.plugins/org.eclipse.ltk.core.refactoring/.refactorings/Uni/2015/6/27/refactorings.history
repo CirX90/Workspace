@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;spielsteuerung&apos; in &apos;aufgabenblatt7.SpielInitialisierung&apos; to &apos;spielSteuerung&apos;&#x0D;&#x0A;- Original project: &apos;Uni&apos;&#x0D;&#x0A;- Original element: &apos;aufgabenblatt7.SpielInitialisierung.spielsteuerung&apos;&#x0D;&#x0A;- Renamed element: &apos;aufgabenblatt7.SpielInitialisierung.spielSteuerung&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;spielsteuerung&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;aufgabenblatt7{SpielInitialisierung.java[SpielInitialisierung^spielsteuerung" name="spielSteuerung" references="true" setter="false" stamp="1435666660665" textual="false" version="1.0"/>
-</session>
