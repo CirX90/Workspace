@@ -1,0 +1,21 @@
+package aufgabe1_4;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class zweiteKlasse {
+	
+	public int zahl = 13;
+	public String beispiel = "keine Zahl";
+	
+	private List<ArrayList> liste = new LinkedList<ArrayList>();
+	
+	public static void pruefen() {
+		
+	}
+	
+	public static void main (String[] args) {
+		
+	}
+
+}

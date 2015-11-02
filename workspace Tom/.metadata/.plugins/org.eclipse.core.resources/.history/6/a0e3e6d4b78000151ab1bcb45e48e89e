@@ -1,0 +1,18 @@
+package aufgabe1_4;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class zweiteKlasse {
+	
+	private List<ArrayList> liste = new LinkedList<ArrayList>();
+	
+	public static void pruefen() {
+		
+	}
+	
+	public static void main (String[] args) {
+		
+	}
+
+}

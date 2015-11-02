@@ -1,0 +1,16 @@
+package aufgabenblatt1;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ArrayListIntTest {
+	
+	@Test
+	public <T> void testeErsteZahlInt1() {
+		ArrayList list = new ArrayList<T>(1);
+		list.hinzufuegen(element);
+		
+	}
+
+}

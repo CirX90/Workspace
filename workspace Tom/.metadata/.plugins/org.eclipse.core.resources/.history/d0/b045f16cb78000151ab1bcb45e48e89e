@@ -1,0 +1,13 @@
+package aufgabe1_4;
+
+public class zweiteKlasse {
+	
+	public static void pruefen() {
+		
+	}
+	
+	public static void main (String[] args) {
+		
+	}
+
+}

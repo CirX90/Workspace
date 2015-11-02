@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.print.attribute.standard.Media"/>
-<fullyQualifiedTypeName name="grundlagen.Switch"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.time.LocalTime"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="aufgabe1_4.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="aufgabe1_4.zweiteKlasse"/>
+<fullyQualifiedTypeName name="aufgabenblatt1.ArrayList"/>
 </qualifiedTypeNameHistroy>

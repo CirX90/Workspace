@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="static"/>
 			<item value="geaendert"/>
 			<item value="&#x09;&#x09;assertEquals(oder5.auswerten(), false);"/>
 			<item value="Erg"/>
@@ -19,7 +20,6 @@
 			<item value="check"/>
 			<item value="alpha"/>
 			<item value="nummer"/>
-			<item value="equals"/>
 		</list>
 		<list key="replacehistory">
 		</list>

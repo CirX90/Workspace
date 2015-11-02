@@ -1,0 +1,26 @@
+package aufgabe1_4;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class zweiteKlasse {
+	
+	public int zahl;
+	public String beispiel = "";
+	
+	public zweiteKlasse(int zahl, String beispiel) {
+		this.zahl = zahl;
+		this.beispiel = beispiel;
+	}
+	
+	private List<ArrayList> liste = new LinkedList<ArrayList>();
+	
+	public static void pruefen() {
+		
+	}
+	
+	public static void main (String[] args) {
+		
+	}
+
+}
