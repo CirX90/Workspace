@@ -40,21 +40,17 @@ public class ArrayListKleinstesElementTest {
 		assertEquals(1, list.getKleinstesElement());
 	}
 	
-	/**
-	 * Es wird getestet ob das kleinste Element herausgesucht wird.
-	 */
-	
 	@Test
 	public <T> void testeGetKleinstesElement3() {
-		int element1 = 4567;
-		int element2 = 2315;
-		int element3 = 9874;
+		int element1 = 1;
+		int element2 = 2;
+		int element3 = 3;
 		ArrayList list = new ArrayList<T>(0);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
-		assertEquals(2315, list.getKleinstesElement());
+		assertEquals(1, list.getKleinstesElement());
 	}
 
 }
