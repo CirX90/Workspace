@@ -2,7 +2,6 @@ package aufgabenblatt1;
 
 /**
  * Klasse zur Steuerung der Anwendung.
- * @author Tom Hertel
  *
  */
 
