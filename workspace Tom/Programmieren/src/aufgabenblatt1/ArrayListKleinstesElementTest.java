@@ -15,7 +15,7 @@ public class ArrayListKleinstesElementTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
@@ -32,7 +32,7 @@ public class ArrayListKleinstesElementTest {
 		int element1 = 1;
 		int element2 = 2;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
@@ -49,7 +49,7 @@ public class ArrayListKleinstesElementTest {
 		int element1 = 4567;
 		int element2 = 2315;
 		int element3 = 9874;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);

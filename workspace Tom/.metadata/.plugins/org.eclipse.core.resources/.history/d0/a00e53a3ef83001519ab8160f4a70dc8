@@ -1,0 +1,24 @@
+package aufgabenblatt1;
+
+public class ArrayAnwendung {
+
+	public static <T> void main(String[] args) {
+		
+		int element1 = 5;
+		int element2 = 4;
+		int element3 = 3;
+		
+		ArrayList list = new ArrayList<T>(3);
+		
+		list.hinzufuegen2(element1);
+		list.hinzufuegen2(element2);
+		list.hinzufuegen2(element3);	
+		
+		System.out.println(list.anzahlElemente);
+
+		System.out.println(list.get(2));
+		
+
+	}
+
+}

@@ -14,7 +14,7 @@ public class ArrayListIntTest {
 	@Test
 	public <T> void testeErsteZahlInt1() {
 		int element = 5;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(1);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element);
 		assertEquals(true, check.pruefe(list));
@@ -30,7 +30,7 @@ public class ArrayListIntTest {
 	public <T> void testeErsteZahlInt2() {
 		String element1 = "Hallo";
 		int element2 = 5;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(2);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
@@ -48,7 +48,7 @@ public class ArrayListIntTest {
 		int element1 = 4;
 		int element2 = 5;
 		int element3 = 6;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		IntCheck check = new IntCheck();
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);

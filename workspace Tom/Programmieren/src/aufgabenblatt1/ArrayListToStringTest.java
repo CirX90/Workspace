@@ -15,7 +15,7 @@ public class ArrayListToStringTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
@@ -32,7 +32,7 @@ public class ArrayListToStringTest {
 		int element1 = 543;
 		int element2 = 435;
 		int element3 = 354;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);

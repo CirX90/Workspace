@@ -44,14 +44,33 @@ public class ArrayList<T> {
 		// nkb anzahlElemente und length auswerten
 		// wenn nicht genug Platz dann Plätze verdoppeln
 		// System.Arraycopy verwenden
-		Object[] neuElementeArray = new Object[elemente.length + 1];
-		for (int i = 0; i < elemente.length; i++) {
-			neuElementeArray[i] = elemente[i];
+
+		anzahlElemente++;
+
+		// if (letztePlatz vom Array != null)
+		// array.length * 2;
+		if (elemente[elemente.length - 1] != null) {
+			// // Neues Array durch copy mit doppelter Länge (Tiefenkopie)
+			Object[] elementeNeu = new Object[elemente.length * 2];
+			// Array, auffüllen, CopyArray, Indexstelle wo eingefügt, Länge des
+			// eingefügten Array
+			System.arraycopy(elemente, 0, elementeNeu, 0, elemente.length);
+
+			elemente = elementeNeu;
 		}
 
-		anzahlElemente = neuElementeArray.length;
-		neuElementeArray[elemente.length] = element;
-		elemente = neuElementeArray;
+		// if (ersterPlatz der verfügbar ist == null)
+		// neues Element da rein
+
+		for (int index = 0; index < elemente.length; index++) {
+
+			if (elemente[index] == null) {
+				elemente[index] = element;
+
+				return;
+			}
+
+		}
 
 	}
 
@@ -111,10 +130,10 @@ public class ArrayList<T> {
 	public void entferneElementAnIndex(int index) {
 
 		// nkb Lösung laut get nehmen (if ....)
-		
+
 		if (index < anzahlElemente && index >= 0) {
 			elemente[index] = null;
-			
+
 			for (int j = index; j < anzahlElemente - 1; j++) {
 				elemente[j] = elemente[j + 1];
 			}
@@ -141,7 +160,7 @@ public class ArrayList<T> {
 
 	public String toString() {
 		String ausgabe = "";
-		for (int i = 0; i < anzahlElemente; i++) {
+		for (int i = 0; i < elemente.length; i++) {
 			ausgabe += elemente[i];
 		}
 		return ausgabe;
@@ -160,7 +179,7 @@ public class ArrayList<T> {
 		int i = 0;
 		while (i < elemente.length) {
 			T original = (T) elemente[i];
-			// nkb < -1
+			// nkb < 0
 			if (original.compareTo(ergebnis) < 0) {
 				ergebnis = (T) elemente[i];
 			}

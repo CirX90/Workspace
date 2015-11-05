@@ -16,7 +16,7 @@ public class ArrayListElementeEntfernenTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
@@ -34,7 +34,7 @@ public class ArrayListElementeEntfernenTest {
 		int element1 = 6547;
 		int element2 = 21354;
 		int element3 = 54334;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
@@ -52,12 +52,12 @@ public class ArrayListElementeEntfernenTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
 		list.entferneElementAnIndex(1);;
-		assertEquals(null, list.get(1));
+		assertEquals(null, list.get(2));
 	}
 	
 	/**
@@ -70,12 +70,12 @@ public class ArrayListElementeEntfernenTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
 		list.entferneElementAnIndex(0);;
-		assertEquals(null, list.get(0));
+		assertEquals(4, list.get(0));
 	}
 
 }

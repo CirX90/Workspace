@@ -16,7 +16,7 @@ public class ArrayListSummenRechnerTest {
 		int element1 = 5;
 		int element2 = 4;
 		int element3 = 3;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
@@ -33,7 +33,7 @@ public class ArrayListSummenRechnerTest {
 	public <T> void testeSummenRechner2() {
 		String element1 = "Hallo";
 		int element2 = 5;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(2);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		assertEquals(0, list.summenRechner());
@@ -50,7 +50,7 @@ public class ArrayListSummenRechnerTest {
 		int element1 = 645;
 		int element2 = 4124;
 		int element3 = 783;
-		ArrayList list = new ArrayList<T>(0);
+		ArrayList list = new ArrayList<T>(3);
 		list.hinzufuegen(element1);
 		list.hinzufuegen(element2);
 		list.hinzufuegen(element3);
