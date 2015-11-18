@@ -1,0 +1,12 @@
+package dasRatespiel;
+
+public class Ratespiel {
+	
+	int zufallsZahlSpiel = (int) (Math.random() * 10);
+	
+	public int getZufallsZahlSpiel() {
+		return zufallsZahlSpiel;
+		
+	}
+
+}

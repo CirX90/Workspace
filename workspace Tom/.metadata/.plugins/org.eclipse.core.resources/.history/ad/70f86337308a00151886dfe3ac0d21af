@@ -1,0 +1,13 @@
+package aufgabenblatt2;
+
+public class Rechner {
+	
+	private enum Operation {ADDIEREN, SUBTRAHIEREN, MULTIPLIZIEREN, DIVIDIEREN}
+	
+	public double berechne( double zahl1, double zahl2) {
+		
+		return 0.0;
+		
+	}
+
+}

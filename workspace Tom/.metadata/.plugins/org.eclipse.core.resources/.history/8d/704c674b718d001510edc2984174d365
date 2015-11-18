@@ -1,0 +1,11 @@
+package aufgabenblatt2;
+
+public class NullEntfernen {
+	
+	public static void main(String[] args) {
+		
+		
+		String[] eingabe = {null, null, "Hallo" };
+	}
+
+}

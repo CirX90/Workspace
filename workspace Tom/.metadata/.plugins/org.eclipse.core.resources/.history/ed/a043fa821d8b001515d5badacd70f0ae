@@ -1,0 +1,31 @@
+package dasRatespiel;
+
+public class Ratespiel {
+
+	Spieler s1 = new Spieler();
+	Spieler s2 = new Spieler();
+	Spieler s3 = new Spieler();
+
+	int zufallsZahlSpiel = (int) (Math.random() * 10);
+
+	public void starteSpiel() {
+
+		if (zufallsZahlSpiel == s1.zufallsZahlSpieler) {
+			System.out.println("Spieler 1 hat die Zufallszahl " + zufallsZahlSpiel + " richtig erraten!");
+		}
+
+		else if (zufallsZahlSpiel == s2.zufallsZahlSpieler) {
+			System.out.println("Spieler 2 hat die Zufallszahl " + zufallsZahlSpiel + " richtig erraten!");
+		}
+
+		else if (zufallsZahlSpiel == s3.zufallsZahlSpieler) {
+			System.out.println("Spieler 2 hat die Zufallszahl " + zufallsZahlSpiel + " richtig erraten!");
+		}else{
+			
+			System.out.println("Kein Spieler hat die Zufallszahl " + zufallsZahlSpiel + " erraten!");
+			
+		}
+
+	}
+
+}

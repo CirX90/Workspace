@@ -1,0 +1,11 @@
+package dasRatespiel;
+
+public class Spieler {
+	
+	int zufallsZahlSpieler = (int) (Math.random() * 10);
+	
+	public int raten() {
+		return zufallsZahlSpieler;
+	}
+
+}

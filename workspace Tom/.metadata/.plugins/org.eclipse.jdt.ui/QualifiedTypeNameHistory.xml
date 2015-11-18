@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.time.LocalTime"/>
-<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-<fullyQualifiedTypeName name="vorlesung11.WmFinalRundenSpiel"/>
-<fullyQualifiedTypeName name="aufgabenblatt5.Palindrom"/>
-<fullyQualifiedTypeName name="aufgabenblatt5.Verschluesselung"/>
-<fullyQualifiedTypeName name="grundlagen.Playground"/>
-<fullyQualifiedTypeName name="aufgabenblatt5.VokaleZaehlen"/>
-<fullyQualifiedTypeName name="java.lang.LinkageError"/>
-<fullyQualifiedTypeName name="aufgabenblatt6.BewegungsVerhaltenArten"/>
-<fullyQualifiedTypeName name="aufgabenblatt6.UmgebungsWahrnehmungsVerhaltenArten"/>
-<fullyQualifiedTypeName name="aufgabenblatt6.AutonomerRoboter"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="aufgabenblatt6.BewegungsVerhalten"/>
@@ -41,7 +28,6 @@
 <fullyQualifiedTypeName name="Equals.Mensch"/>
 <fullyQualifiedTypeName name="eachArray.Lebewesen"/>
 <fullyQualifiedTypeName name="grundlagen.Sandbox"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="student.Studentenverzeichnis"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
@@ -60,4 +46,18 @@
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="aufgabe1_4.zweiteKlasse"/>
 <fullyQualifiedTypeName name="aufgabenblatt1.ArrayList"/>
+<fullyQualifiedTypeName name="sandbox.Hund"/>
+<fullyQualifiedTypeName name="java.util.EnumMap"/>
+<fullyQualifiedTypeName name="java.util.function.BinaryOperator"/>
+<fullyQualifiedTypeName name="dasRatespiel.Ratespiel"/>
+<fullyQualifiedTypeName name="dasRatespiel.Spieler"/>
+<fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="org.omg.Messaging.SyncScopeHelper"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="aufgabenblatt2.Rechner.Operation"/>
+<fullyQualifiedTypeName name="javax.swing.text.AbstractDocument.LeafElement"/>
+<fullyQualifiedTypeName name="aufgabenblatt2.NullEntfernen"/>
+<fullyQualifiedTypeName name="aufgabenblatt2.StreamKorrektion"/>
 </qualifiedTypeNameHistroy>

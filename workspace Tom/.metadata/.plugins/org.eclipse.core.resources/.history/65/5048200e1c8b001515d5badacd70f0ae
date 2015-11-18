@@ -1,0 +1,16 @@
+package dasRatespiel;
+
+public class Ratespiel {
+	
+	int zufallsZahlSpiel = (int) (Math.random() * 10);
+	
+	Spieler s1 = new Spieler();
+	Spieler s2 = new Spieler();
+	Spieler s3 = new Spieler();
+	
+	public int getZufallsZahlSpiel() {
+		return zufallsZahlSpiel;
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package aufgabenblatt2;
+
+import static org.junit.Assert.*;
+
+import javax.swing.text.AbstractDocument.LeafElement;
+
+import org.junit.Test;
+
+public class StreamNullEntfernenTest {
+
+	@Test
+	public void test() {
+		StreamKorrektion stream = new StreamKorrektion();
+		String[] eingabe = {"Eingabe", null, "Hallo"};
+		
+		stream.nullEntfernen(eingabe);
+//		assertEquals(stream.nullEntfernen(eingabe), eingabe.length == 2);
+		
+	}
+
+}

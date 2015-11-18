@@ -1,0 +1,43 @@
+package aufgabenblatt2;
+
+public class NullEntfernen {
+
+	int nullZaehler = 0;
+	String[] eingabe = {null, null, "Hallo", null, "Hallo2", null, null};
+
+	public String[] entfernen(String[] eingabe) {
+		// nkb Leere Plätze in der Mitte sollen nicht vorhanden sein
+		if (eingabe.length != 0) {
+
+			for (int index = 0; index < eingabe.length;index++) {
+
+				if (eingabe[index] == null) {
+					nullZaehler++;
+					for (int j = index; j < eingabe.length - 1; j++) {
+					eingabe[j] = eingabe[j + 1];
+					
+				}
+			//	eingabe[eingabe.length - 1] = null;
+
+			}
+		}
+	}
+		System.out.println(nullZaehler);
+	return eingabe;
+}
+	
+	public void ausgeben(String[] eingabe) {
+		for (int j = 0; j < eingabe.length; j++) {
+			System.out.println(eingabe[j]);
+		}
+	}
+
+	public static void main(String[] args) {
+		NullEntfernen nulle = new NullEntfernen();
+
+		
+		nulle.ausgeben(nulle.entfernen(nulle.eingabe));
+
+	}
+
+}
