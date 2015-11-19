@@ -1,0 +1,30 @@
+package aufgabenblatt2;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamKorrektion {
+
+	public List<String> stringVerarbeiter(String[] stringArray) {
+		
+		return Arrays.stream(stringArray).filter(str -> str != null)
+				.map(str -> str.trim()).map(str -> str.toUpperCase())
+				.map(str -> str.replaceAll("Ä", "AE"))
+				.map(str -> str.replaceAll("Ö", "OE"))
+				.map(str -> str.replaceAll("Ü", "UE"))
+				.map(str -> str.replaceAll("ß", "SS"))
+				.map(str -> str.length() > 8 ? str.substring(0, 8) : str)
+				.collect(Collectors.toList());
+		
+	}
+
+	public static void main(String[] args) {
+
+		StreamKorrektion stream = new StreamKorrektion();
+		String[] stringArray = { "Eingabe ", "Äußeres ", null, "Straßen-Feger",
+		" ein Haus" };
+		System.out.println(stream.stringVerarbeiter(stringArray));
+
+	}
+}

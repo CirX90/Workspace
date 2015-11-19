@@ -1,0 +1,17 @@
+package aufgabenblatt2;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class StreamKorrektionTest {
+
+	@Test
+	public void test() {
+		StreamKorrektion stream = new StreamKorrektion();
+		String[] eingabe = {"Eingabe ", "Äußeres ", null, "Strassen-Feger", " ein Haus" };
+		String korrektur = "[EINGABE, AEUSSERE, STRASSEN, EIN HAUS]";
+		assertEquals(System.out.println(stream.stringVerarbeiter(eingabe)), korrektur);
+	}
+
+}

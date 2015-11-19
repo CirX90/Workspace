@@ -1,123 +1,29 @@
 package aufgabenblatt2;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class StreamKorrektion {
 
-	private String[] eingabe = { "Eingabe ", "Äußeres ", null, "Straßen-Feger",
-			" ein Haus" };
-	private String[] nullEntferner;
-	private int nullZaehler;
-	final int maxStringLaenge = 8;
-	private String leerzeichenEntfernen;
-	private String stringKuerzer;
+	public List<String> stringVerarbeiter(String[] stringArray) {
 
-	public void eingabeVerarbeitung() {
-
-		for (int index = 0; index < eingabe.length; index++) {
-
-			if (eingabe[index] == null) {
-				nullZaehler++;
-			}
-		}
-	}
-
-	public String[] getEingabe() {
-		return eingabe;
-	}
-
-	public void setEingabe(String[] eingabe) {
-		this.eingabe = eingabe;
-	}
-
-	public void nullEntfernen(String[] eingabe) {
-		if (eingabe.length != 0) {
-
-			for (int index = 0; index < eingabe.length - 1; index++) {
-
-				if (eingabe[index] == null) {
-					for (int j = index; j < eingabe.length - 1; j++) {
-						eingabe[j] = eingabe[j + 1];
-					}
-				}
-			}
-		}
-
-		if (eingabe[0] == null) {
-			nullEntfernen(eingabe);
-		}
-
-		nullEntferner = new String[eingabe.length - nullZaehler];
-
-		System.arraycopy(eingabe, 0, nullEntferner, 0,
-				eingabe.length - nullZaehler);
-		eingabe = nullEntferner;
-		setEingabe(eingabe);
-	}
-
-	public void ausgeben(String[] eingabe) {
-		for (int index = 0; index < eingabe.length; index++) {
-			System.out.println(eingabe[index]);
-
-		}
-	}
-
-	public void leerzeichenEntfernen(String[] eingabe) {
-		for (int index = 0; index < eingabe.length; index++) {
-			
-			leerzeichenEntfernen = eingabe[index].trim();
-			eingabe[index] = leerzeichenEntfernen;
-		}
-
-		setEingabe(eingabe);
-
-	}
-
-	public void kleinZuGrossbuchstaben(String[] eingabe) {
-		for (int index = 0; index < eingabe.length; index++) {
-			eingabe[index] = eingabe[index].toUpperCase();
-			setEingabe(eingabe);
-		}
-	}
-
-	public void ersetzeUmlaute(String[] eingabe) {
-		for (int index = 0; index < eingabe.length; index++) {
-			eingabe[index] = eingabe[index].replaceAll("Ä", "AE");
-			eingabe[index] = eingabe[index].replaceAll("Ö", "OE");
-			eingabe[index] = eingabe[index].replaceAll("Ü", "UE");
-			eingabe[index] = eingabe[index].replaceAll("ß", "SS");
-			setEingabe(eingabe);
-		}
-	}
-
-	public void stringKuerzen(String[] eingabe) {
-		for (int index = 0; index < eingabe.length; index++) {
-
-			if (eingabe[index].length() < maxStringLaenge) {
-
-				stringKuerzer = eingabe[index].substring(0,
-						eingabe[index].length());
-				eingabe[index] = stringKuerzer;
-			} else {
-				stringKuerzer = eingabe[index].substring(0, maxStringLaenge);
-				eingabe[index] = stringKuerzer;
-			}
-		}
-
-		setEingabe(eingabe);
-
+		return Arrays.stream(stringArray).filter(str -> str != null)
+				.map(str -> str.trim()).map(str -> str.toUpperCase())
+				.map(str -> str.replaceAll("Ä", "AE"))
+				.map(str -> str.replaceAll("Ö", "OE"))
+				.map(str -> str.replaceAll("Ü", "UE"))
+				.map(str -> str.replaceAll("ß", "SS"))
+				.map(str -> str.length() > 8 ? str.substring(0, 8) : str)
+				.collect(Collectors.toList());
 	}
 
 	public static void main(String[] args) {
 
 		StreamKorrektion stream = new StreamKorrektion();
-
-		stream.eingabeVerarbeitung();
-
-		stream.nullEntfernen(stream.eingabe);
-		stream.leerzeichenEntfernen(stream.eingabe);
-		stream.kleinZuGrossbuchstaben(stream.eingabe);
-		stream.ersetzeUmlaute(stream.eingabe);
-		stream.stringKuerzen(stream.eingabe);
-		stream.ausgeben(stream.eingabe);
+		String[] stringArray = { "Eingabe ", "Äußeres ", null, "Straßen-Feger",
+				" ein Haus" };
+		System.out.println(stream.stringVerarbeiter(stringArray));
 
 	}
 }

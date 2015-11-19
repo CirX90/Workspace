@@ -1,84 +1,85 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.1
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
 package aufgabenblatt2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.BinaryOperator;
+
+/**
+ * 
+ * Diese Programm dient dazu, die vier Grundrechenarten über Lambdas und einer
+ * Map ausführen zu lassen.
+ * 
+ * @author Tom Hertel
+ *
+ */
 
 public class Rechner {
 
-	double zahl1 = 1.0;
-	double zahl2 = 2.0;
+	/**
+	 * Erstellung einer HashMap mit Wert aus Lambdas vom Typ BinaryOperator und
+	 * Schlüssel mit Operation aus dem Enum.
+	 */
 
-	private enum Operation {
-		ADDITION, SUBTRAKTION, MULTIPLIKATION, DIVISION
+	private Map<Operation, BinaryOperator<Double>> map = new HashMap<Operation, BinaryOperator<Double>>();
+
+	// static Map<Operation, DoubleDoubleZuDouble> map = new HashMap<Operation,
+	// DoubleDoubleZuDouble>();
+
+	/**
+	 * Konstruktor. Map wird mit Inhalt gefüllt wobei die Konstanten aus dem
+	 * Enum die Schlüssel sind. Die Werte der Map sind jeweils Lambdas vom Typ
+	 * BinaryOperator.
+	 */
+
+	public Rechner() {
+		map.put(Operation.ADDITION, (zahl1, zahl2) -> {
+			return zahl1 + zahl2;
+		});
+		map.put(Operation.SUBTRAKTION, (zahl1, zahl2) -> {
+			return zahl1 - zahl2;
+		});
+		map.put(Operation.MULTIPLIKATION, (zahl1, zahl2) -> {
+			return zahl1 * zahl2;
+		});
+		map.put(Operation.DIVISION, (zahl1, zahl2) -> {
+			return zahl1 / zahl2;
+		});
+
 	}
 
-	static Map<Operation, DoubleDoubleZuDouble> map = new HashMap<Operation, DoubleDoubleZuDouble>();
-
-	// BinaryOperator<Double> addiere = (n1, n2) -> n1 + n2;
-	// BinaryOperator<Double> subtrahiere = (n1, n2) -> n1 - n2;
-	// BinaryOperator<Double> multipliziere = (n1, n2) -> n1 * n2;
-	// BinaryOperator<Double> dividiere = (n1, n2) -> n1 / n2;
-
-	private DoubleDoubleZuDouble addiere = (zahl1, zahl2) -> {
-		return zahl1 + zahl2;
-	};
-
-	private DoubleDoubleZuDouble subtrahiere = (zahl1, zahl2) -> {
-		return zahl1 - zahl2;
-	};
-
-	private DoubleDoubleZuDouble multipliziere = (zahl1, zahl2) -> {
-		return zahl1 * zahl2;
-	};
-
-	private DoubleDoubleZuDouble dividiere = (zahl1, zahl2) -> {
-		return zahl1 / zahl2;
-	};
+	/**
+	 * 
+	 * Über die Operation wird der richtige Lambda-Ausdruck gewählt, auf die
+	 * Argumente angewendet und das Ergebnis zurückgeliefert.
+	 * 
+	 * @param rechenart
+	 * @param zahl1
+	 * @param zahl2
+	 * @return Ergebnis
+	 */
 
 	public double berechne(Operation rechenart, double zahl1, double zahl2) {
 
-		if (rechenart == Operation.ADDITION) {
-			return addiere.werteAus(zahl1, zahl2);
-		}
-
-		else if (rechenart == Operation.SUBTRAKTION) {
-			return subtrahiere.werteAus(zahl1, zahl2);
-		}
-
-		else if (rechenart == Operation.MULTIPLIKATION) {
-			return multipliziere.werteAus(zahl1, zahl2);
-		}
-
-		else if (rechenart == Operation.DIVISION) {
-			return dividiere.werteAus(zahl1, zahl2);
-		} else {
-
-			return 0.0;
-		}
+		return map.get(rechenart).apply(zahl1, zahl2);
+		// return map.get(rechenart).werteAus(zahl1, zahl2);
 
 	}
 
-	public static void main(String[] args) {
-		Rechner rechner = new Rechner();
-//		System.out.println(rechner.berechne(Operation.DIVISION, rechner.zahl1,
-//				rechner.zahl2));
-
-		map.put(Operation.ADDITION, rechner.addiere);
-		map.put(Operation.SUBTRAKTION, rechner.subtrahiere);
-		map.put(Operation.MULTIPLIKATION, rechner.multipliziere);
-		map.put(Operation.DIVISION, rechner.dividiere);
-
-//		System.out.println(rechner.berechne(Operation.ADDITION, rechner.zahl1,
-//				rechner.zahl2));
-//
-//		System.out.println(map.get(rechner.addiere));
-		
-		double erg = rechner.berechne(Operation.MULTIPLIKATION, 1.0, 2.0);
-		erg = rechner.berechne(Operation.ADDITION, erg, 3.0);
-		System.out.println(erg);
-
-		// String value = map.get(Operation.ADDIEREN);
-		// System.out.println(value);
-	}
+	// public static void main(String[] args) {
+	// Rechner rechner = new Rechner();
+	// double zahl1 = 1.0;
+	// double zahl2 = 2.0;
+	//
+	// System.out.println(rechner.berechne(Operation.ADDITION, zahl1, zahl2));
+	//
+	// }
 
 }
