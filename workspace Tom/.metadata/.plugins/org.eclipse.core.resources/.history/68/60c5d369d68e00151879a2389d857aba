@@ -73,4 +73,13 @@ public class Rechner {
 
 	}
 
+	// public static void main(String[] args) {
+	// Rechner rechner = new Rechner();
+	// double zahl1 = 1.0;
+	// double zahl2 = 2.0;
+	//
+	// System.out.println(rechner.berechne(Operation.ADDITION, zahl1, zahl2));
+	//
+	// }
+
 }

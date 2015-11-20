@@ -1,0 +1,36 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.3
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt2;
+
+public class Rennen extends Thread{
+	
+	
+	
+	@Override
+	public void run() {
+		
+		for(int i = 0; i <= 10; i++) {
+			status();
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Rennauto wagen1 = new Rennauto();
+		Rennauto wagen2 = new Rennauto();
+		Rennauto wagen3 = new Rennauto();
+		
+		wagen1.start();
+		wagen2.run();
+		wagen3.run();
+		Thread rennen = new Thread(new Rennauto());
+		rennen.start();
+	}
+
+}
