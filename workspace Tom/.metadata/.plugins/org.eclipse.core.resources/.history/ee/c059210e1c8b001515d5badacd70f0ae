@@ -1,7 +1,0 @@
-package dasRatespiel;
-
-public class Spieler {
-	
-	int zufallsZahlSpieler = (int) (Math.random() * 10);
-
-}

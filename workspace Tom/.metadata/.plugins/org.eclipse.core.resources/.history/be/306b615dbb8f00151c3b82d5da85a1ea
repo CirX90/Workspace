@@ -1,0 +1,52 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.3
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt2;
+
+public class Rennen extends Thread {
+
+	private final double streckenlaenge = 10.0;
+
+	public double getStreckenlaenge() {
+		return streckenlaenge;
+	}
+
+	@Override
+	public void run() {
+
+		Thread wagen1 = new Thread(new Rennauto("Vettel", 1.0));
+		Thread wagen2 = new Thread(new Rennauto("Rosberg", 1.0));
+		Thread wagen3 = new Thread(new Rennauto("Hamilton", 1.0));
+		// Thread Rennabbruch = new Thread();
+
+		wagen1.start();
+		wagen2.start();
+		wagen3.start();
+//		System.out.println("Rennen test");
+//		wagen1.interrupt();
+//		wagen2.interrupt();
+
+	}
+
+	public static void main(String[] args) {
+
+//		Rennen rennen = new Rennen();
+		Thread rennen = new Thread(new Rennen());
+
+		rennen.start();
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException ie) {
+			rennen.interrupt();
+		}
+		
+		
+
+	}
+}

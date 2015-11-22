@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="aufgabenblatt6_1.IBewegungsVerhalten"/>
-<fullyQualifiedTypeName name="aufgabenblatt6_1.IWahrnehmungsVerhalten"/>
-<fullyQualifiedTypeName name="aufgabenblatt6_1.UltraschallWahrnehmung"/>
 <fullyQualifiedTypeName name="aufgabenblatt6.UmgebungsWahrnehmungsVerhalten"/>
 <fullyQualifiedTypeName name="aufgabenblatt6_1.AufRaedernRollen"/>
 <fullyQualifiedTypeName name="aufgabenblatt6_1.LaserScannerWahrnehmung"/>
@@ -24,7 +21,6 @@
 <fullyQualifiedTypeName name="eachArray.Lebewesen"/>
 <fullyQualifiedTypeName name="grundlagen.Sandbox"/>
 <fullyQualifiedTypeName name="student.Studentenverzeichnis"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="aufgabenblatt1.Student"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
@@ -56,8 +52,12 @@
 <fullyQualifiedTypeName name="aufgabenblatt2.Operation"/>
 <fullyQualifiedTypeName name="aufgabenblatt2.StreamKorrektion"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
-<fullyQualifiedTypeName name="aufgabenblatt2.Rennauto"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="aufgabenblatt2.Rennauto"/>
+<fullyQualifiedTypeName name="aufgabenblatt2.Rennen"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="rennen.Rennen"/>
 </qualifiedTypeNameHistroy>

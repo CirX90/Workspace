@@ -1,0 +1,128 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.3
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package rennen;
+
+/**
+ * Klasse Rennauto
+ * 
+ * @author Leon, Jannes
+ *
+ */
+public class Rennauto extends Thread implements Comparable<Rennauto> {
+
+	/**
+	 * private double schritte
+	 */
+	// private double schritte = 0.0;
+	/**
+	 * private double zeit
+	 */
+	private long startZeit = System.currentTimeMillis();
+	// private double zeit;
+
+	private double aktuellePosition = 0;
+
+	Rennen rennen = new Rennen();
+
+	private double geschwindigkeit;
+
+	private double dauer;
+	/**
+	 * private String name
+	 */
+	private String name;
+
+	public double getAktuellePosition() {
+		return aktuellePosition;
+	}
+
+	public double getGeschwindigkeit() {
+		return geschwindigkeit;
+	}
+
+	/**
+	 * Konstruktor
+	 * 
+	 * @param name
+	 * @param streckenlaenge
+	 */
+	public Rennauto(String name, double geschwindigkeit) {
+		this.name = name;
+		this.geschwindigkeit = geschwindigkeit;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return
+	 */
+	public double getDauer() {
+		return dauer;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return
+	 */
+	public String getNames() {
+		return name;
+	}
+
+	/**
+	 * Override run Methode. Aktuelle Position der einzelnen Autos wird jede
+	 * Runde ermittelt und ausgegeben.
+	 */
+
+	@Override
+	public void run() {
+		while (!isInterrupted()
+				&& aktuellePosition <= rennen.getStreckenlaenge() - 1) {
+
+			aktuellePosition += getGeschwindigkeit();
+
+			System.err.println(name + ": " + aktuellePosition + "/"
+					+ rennen.getStreckenlaenge());
+
+			dauer = System.currentTimeMillis() - startZeit;
+			dauer /= 1000;
+			dauer = Math.round(dauer * 10.0) / 10.0;
+
+			try {
+				Thread.sleep((int) (Math.random() * 401 + 800));
+			} catch (InterruptedException e) {
+				try {
+					Thread.sleep(1000);
+					interrupt();
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
+	}
+
+	/**
+	 * Override CompareTo Methode um Autos nach der Zeit zu sortieren.
+	 */
+
+	@Override
+	public int compareTo(Rennauto auto) {
+		int ergebnis = 0;
+		if (getDauer() < auto.getDauer()) {
+			ergebnis = -1;
+		}
+		if (getDauer() == auto.getDauer()) {
+			ergebnis = 0;
+		}
+		if (getDauer() > auto.getDauer()) {
+			ergebnis = 1;
+		}
+		return ergebnis;
+	}
+}

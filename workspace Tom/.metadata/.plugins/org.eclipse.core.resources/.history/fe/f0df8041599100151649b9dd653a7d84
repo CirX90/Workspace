@@ -1,0 +1,51 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.3
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Rennen {
+
+	private final double streckenlaenge = 10.0;
+
+	public double getStreckenlaenge() {
+		return streckenlaenge;
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+
+		List<Rennauto> rennWagen = new ArrayList<Rennauto>();
+
+		Rennauto wagen1 = new Rennauto("Vettel", 1.0);
+		Rennauto wagen2 = new Rennauto("Rosberg", 1.0);
+		Rennauto wagen3 = new Rennauto("Hamilton", 1.0);
+
+		rennWagen.add(0, wagen1);
+		rennWagen.add(1, wagen2);
+		rennWagen.add(2, wagen3);
+
+		wagen1.start();
+		wagen2.start();
+		wagen3.start();
+
+		wagen1.join();
+		wagen2.join();
+		wagen3.join();
+
+		rennWagen.sort(null);
+
+		System.out.println("Rennen zuende.\nErgebnis:");
+
+		for (Rennauto auto : rennWagen) {
+			System.out.println(
+					auto.getFahrerName() + ": " + auto.getDauer() + " sek.");
+		}
+	}
+}

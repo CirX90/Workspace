@@ -8,39 +8,66 @@
 
 package aufgabenblatt2;
 
-public class Rennen extends Thread{
-	
-	public Rennen() {
-		Thread Wagen1 = new Thread(new Rennen());
-		Thread Wagen2 = new Thread(new Rennen());
-		Thread Wagen3 = new Thread(new Rennen());
-	}
-	
-	
-	
-	@Override
-	public void run() {
-		
-		for(int i = 0; i <= 10; i++) {
-		
-		}
-		
-	}
-	
-	public static void main(String[] args) {
-//		Thread wagen1 = new Thread(new Rennauto());
-//		Thread wagen2 = new Thread(new Rennauto());
-//		Thread wagen3 = new Thread(new Rennauto());
-		
-//		Thread wagen1 = new Thread(new Rennen());
-//		Thread wagen2 = new Thread(new Rennen());
-//		Thread wagen3 = new Thread(new Rennen());
-		
-//		wagen1.start();
-//		wagen2.start();
-//		wagen3.start();
-		Thread rennen = new Thread(new Rennen());
-		rennen.start();
+/**
+ * Anwendungsklasse um das Rennen zu simulieren. Startet mehrere Rennautos und
+ *  lässt diese "fahren". Sind alle Rennwagen im Ziel, wird das Rennende auf 
+ *  der Konsole ausgegeben und die Fahrer werden in der Reihenfolge ihrer
+ *  Zielankunft aufgelistet.
+ *  
+ * @author Tom, Lenard
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Rennen {
+	/**
+	 * main Methode. Array Liste, einzelne Rennautoobjekte und ein Abbruchobjekt
+	 * werden erstellt. Die Threads werden gestartet und die Liste mit den Autos
+	 * befüllt. Danach wird gewartet bis alle Thread beendet wurden. Die Liste
+	 * wird nach compareTo sortiert und dann wird diese ausgegeben.
+	 * 
+	 * @param args
+	 * @throws InterruptedException
+	 */
+
+	private final double streckenlaenge = 10.0;
+
+	public double getStreckenlaenge() {
+		return streckenlaenge;
 	}
 
+	public static void main(String[] args) throws InterruptedException {
+
+		List<Rennauto> rennWagen = new ArrayList<Rennauto>();
+
+		Rennen rennen = new Rennen();
+
+		Rennauto auto1 = new Rennauto("Schumacher", 1.0);
+		Rennauto auto2 = new Rennauto("Raikkönnen", 1.0);
+		Rennauto auto3 = new Rennauto("Coulthard", 1.0);
+
+		rennWagen.add(0, auto1);
+		rennWagen.add(1, auto2);
+		rennWagen.add(2, auto3);
+
+		Rennabbruch abbruch = new Rennabbruch(auto1, auto2, auto3,
+				rennen.getStreckenlaenge());
+
+		auto1.start();
+		auto2.start();
+		auto3.start();
+		abbruch.start();
+
+		auto1.join();
+		auto2.join();
+		auto3.join();
+
+		rennWagen.sort(null);
+		System.out.println("Rennen zuende.\nErgebnis:");
+		for (Rennauto auto : rennWagen) {
+			System.out.println(
+					auto.getFahrerName() + ": " + auto.getDauer() + " sek.");
+		}
+	}
 }

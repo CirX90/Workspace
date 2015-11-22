@@ -1,7 +1,0 @@
-package dasRatespiel;
-
-public class Ratespiel {
-	
-	int zufallsZahl = (int) (Math.random() * 10);
-
-}
