@@ -1,0 +1,90 @@
+/**
+ * Praktikum TI-PM2, WS 2015
+ * Gruppe: Tom-Henrik Hertel (tom-henrik.hertel@haw-hamburg.de)
+ * 		   Lenard Lange 	 (lenard.lange@haw-hamburg.de)
+ * Aufgabe: Aufgabenblatt 2, Aufgabe 2.1
+ * Verwendete Quellen: Vorlesungsfolien
+ */
+
+package aufgabenblatt2;
+
+import java.lang.IllegalArgumentException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BinaryOperator;
+
+/**
+ * 
+ * Diese Programm dient dazu, die vier Grundrechenarten über Lambdas und einer
+ * Map ausführen zu lassen.
+ * 
+ * @author Tom Hertel
+ *
+ */
+
+public class Rechner {
+
+	/**
+	 * Erstellung einer HashMap mit Wert aus Lambdas vom Typ BinaryOperator und
+	 * Schlüssel mit Operation aus dem Enum.
+	 */
+
+	private Map<Operation, BinaryOperator<Double>> map = new HashMap<Operation, BinaryOperator<Double>>();
+
+	// zusätliche Möglichkeit über Typ DoubleDoubleZuDouble
+	// static Map<Operation, DoubleDoubleZuDouble> map = new HashMap<Operation,
+	// DoubleDoubleZuDouble>();
+
+	/**
+	 * Konstruktor. Map wird mit Inhalt gefüllt wobei die Konstanten aus dem
+	 * Enum die Schlüssel sind. Die Werte der Map sind jeweils Lambdas vom Typ
+	 * BinaryOperator.
+	 */
+
+	public Rechner() {
+		map.put(Operation.ADDITION, (zahl1, zahl2) -> {
+			return zahl1 + zahl2;
+		});
+		map.put(Operation.SUBTRAKTION, (zahl1, zahl2) -> {
+			return zahl1 - zahl2;
+		});
+		map.put(Operation.MULTIPLIKATION, (zahl1, zahl2) -> {
+			return zahl1 * zahl2;
+		});
+		map.put(Operation.DIVISION, (zahl1, zahl2) -> {
+			return zahl1 / zahl2;
+		});
+
+	}
+
+	/**
+	 * 
+	 * Über die Operation wird der richtige Lambda-Ausdruck gewählt, auf die
+	 * Argumente angewendet und das Ergebnis zurückgeliefert.
+	 * 
+	 * @param rechenart
+	 * @param zahl1
+	 * @param zahl2
+	 * @return Ergebnis
+	 */
+
+	public double berechne(Operation rechenart, double zahl1, double zahl2) {
+
+		IllegalArgumentException ex;
+		if (rechenart == Operation.DIVISION && zahl2 == 0) {
+			ex = new IllegalArgumentException("Division durch 0!");
+            throw ex;
+		}
+
+		return map.get(rechenart).apply(zahl1, zahl2);
+		// zusätliche Möglichkeit über Typ DoubleDoubleZuDouble
+		// return map.get(rechenart).werteAus(zahl1, zahl2);
+
+	}
+	
+	public static void main(String[] args) {
+        Rechner rechner = new Rechner();
+        rechner.berechne(Operation.DIVISION, 2, 0);
+    }
+
+}
